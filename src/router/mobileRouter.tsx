@@ -1,12 +1,12 @@
 import { createBrowserRouter, } from "react-router-dom"
-import LayoutScreen from '../components/common/LayoutScreen'
 import MobileStart from "../pages/mobile/MobileStart"
+import MobileLayOut from "../components/common/mobileLayout/MobileLayOut"
 
 
 export const mobileRouter = createBrowserRouter([
     {
         path: "/",
-        element: <LayoutScreen />,
+        element: <MobileLayOut />,
         children: [
             { index: true, element: <MobileStart /> }
         ]

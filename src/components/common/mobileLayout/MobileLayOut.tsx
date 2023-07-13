@@ -1,7 +1,7 @@
-import React from 'react'
+
 import { Outlet } from 'react-router-dom'
 
-const LayoutScreen = () => {
+const MobileLayOut = () => {
     return (
         <div>
             <Outlet />
@@ -9,4 +9,4 @@ const LayoutScreen = () => {
     )
 }
 
-export default LayoutScreen
+export default MobileLayOut

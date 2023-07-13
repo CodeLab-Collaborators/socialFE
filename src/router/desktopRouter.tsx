@@ -1,12 +1,12 @@
 import { createBrowserRouter, } from "react-router-dom"
-import LayoutScreen from '../components/common/LayoutScreen'
 import DesktopStart from "../pages/desktop/DesktopStart"
+import DesktopLayOut from "../components/common/desktopLayout/DesktopLayOut"
 
 
 export const desktopRouter = createBrowserRouter([
     {
         path: "/",
-        element: <LayoutScreen />,
+        element: <DesktopLayOut />,
         children: [
             { index: true, element: <DesktopStart /> }
         ]

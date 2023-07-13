@@ -1,12 +1,12 @@
 import { createBrowserRouter, } from "react-router-dom"
-import LayoutScreen from '../components/common/LayoutScreen'
 import TabletStart from "../pages/tablet/TabletStart"
+import TabletLayOut from "../components/common/tabletLayout/TabletLayOut"
 
 
 export const tabletRouter = createBrowserRouter([
     {
         path: "/",
-        element: <LayoutScreen />,
+        element: <TabletLayOut />,
         children: [
             { index: true, element: <TabletStart /> }
         ]
