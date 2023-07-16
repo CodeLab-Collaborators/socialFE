@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URl = "https://social-connect-797u.onrender.com/api/social/user";
+const URl = "https://social-connect-797u.onrender.com";
 
 export const createUser = async ({ name, email, username, password }: any) => {
   return await axios
