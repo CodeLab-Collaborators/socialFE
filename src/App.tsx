@@ -1,11 +1,14 @@
-import { MainRouter } from './router/mainRouter'
+import { MainRouter } from "./router/mainRouter";
+import { RecoilRoot } from "recoil";
 
 const App = () => {
   return (
-    <div >
-      <MainRouter />
+    <div>
+      <RecoilRoot>
+        <MainRouter />
+      </RecoilRoot>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
