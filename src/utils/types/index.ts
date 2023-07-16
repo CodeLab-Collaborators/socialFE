@@ -9,7 +9,7 @@ export type inputData = {
 export type buttonData = {
   title: string;
   buttonType: "button" | "submit" | "reset";
-  onclick: React.MouseEventHandler<HTMLButtonElement>;
+  onclick?: React.MouseEventHandler<HTMLButtonElement>;
   width: string;
 };
 
