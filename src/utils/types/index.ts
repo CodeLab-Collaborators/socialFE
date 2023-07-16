@@ -13,8 +13,9 @@ export type buttonData = {
   width: string;
 };
 
-export type NewUsers = {
+export type CreateUserParams = {
   name: string;
   email: string;
+  username: string;
   password: string;
 };
