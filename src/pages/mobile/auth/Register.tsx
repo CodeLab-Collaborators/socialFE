@@ -7,9 +7,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../../../utils/api/api";
+import { useRecoilState } from "recoil";
+import { ReadNewUsers } from "../../../utils/stateMgt/Recoil";
 
 const Register = () => {
   const navigate = useNavigate();
+  const [users, setUsers] = useRecoilState(ReadNewUsers);
 
   const userSchema = yup
     .object({
@@ -50,9 +53,9 @@ const Register = () => {
   });
 
   const Submit = handleSubmit(async (data: any) => {
-    // console.log(data);
-
     posting.mutate(data);
+    setUsers(users);
+    console.log("first");
   });
 
   return (
