@@ -12,3 +12,9 @@ export type buttonData = {
   onclick: React.MouseEventHandler<HTMLButtonElement>;
   width: string;
 };
+
+export type NewUsers = {
+  name: string;
+  email: string;
+  password: string;
+};
