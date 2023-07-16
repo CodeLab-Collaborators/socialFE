@@ -1,12 +1,13 @@
-
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import Footer from "../../../pages/mobile/common/Footer";
 
 const MobileLayOut = () => {
-    return (
-        <div>
-            <Outlet />
-        </div>
-    )
-}
+  return (
+    <div className="overflow-x-hidden">
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
-export default MobileLayOut
+export default MobileLayOut;
