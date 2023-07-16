@@ -1,11 +1,11 @@
 import { atom } from "recoil";
 // import { recoilPersist } from "recoil-persist";
-import { NewUsers } from "../types";
+import { CreateUserParams } from "../types";
 
 // const { persistAtom } = recoilPersist();
 
 export const ReadNewUsers = atom({
   key: "New Users",
-  default: {} as NewUsers,
+  default: {} as Omit<CreateUserParams, "password">,
   //   effects_UNSTABLE: [persistAtom],
 });
