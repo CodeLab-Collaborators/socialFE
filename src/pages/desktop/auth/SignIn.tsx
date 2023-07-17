@@ -76,8 +76,8 @@ const SignInScreen = () => {
     })
 
     return (
-        <div className="w-[100%] flex mb-[40px] h-full" >
-            <div className="w-[100vw] flex mt-[40px]
+        <div className="w-[100%] flex mb-[40px] h-[89vh] " >
+            <div className="w-[100vw] flex items-center
             justify-center 
           
             
@@ -96,9 +96,9 @@ const SignInScreen = () => {
                 <div className="w-[300px] " >
 
 
-                    <div className="rounded-sm border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center  " >
+                    <div className="rounded border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center pb-1 " >
                         {/* logo */}
-                        <div className="text-[20px] font-semibold my-2 " >logo</div>
+                        <div className="text-[20px] font-semibold my-2 " >AJ Connect</div>
                         {/* content */}
                         <div className="w-[70%] text-xs text-center mb-4" >Sign in to see Photes and Video from your Friends.</div>
 
@@ -133,7 +133,7 @@ const SignInScreen = () => {
                                 <input
                                     {...register("email")}
                                     placeholder="Eneter your Email "
-                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
                                 />
                                 {
                                     errors.email && <div className="text-[10px] text-end capitalize text-red-500 ">Email Error</div>
@@ -149,7 +149,7 @@ const SignInScreen = () => {
                                 <input
                                     {...register("password")}
                                     placeholder="Eneter your Password"
-                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
                                 />
                                 {
                                     errors.password && <div className="text-[10px] text-end capitalize text-red-500 ">Password Error</div>
@@ -160,7 +160,7 @@ const SignInScreen = () => {
 
 
 
-                        <button className=" mt-5 bg-[#F97316] font-semibold  rounded-sm text-white w-[97%] py-2 hover:scale-[1.015] transition-all duration-300 mb-3" type="submit" onClick={() => {
+                        <button className=" mt-5 bg-[#F97316] font-semibold  rounded-sm text-white w-[97%] py-2 hover:scale-[1.015] transition-all duration-300 " type="submit" onClick={() => {
 
                             onSubmit().then(() => {
                                 console.log("resolve")
@@ -181,6 +181,7 @@ const SignInScreen = () => {
 
 
             </div>
+            <div className="grow" />
         </div >
     )
 }

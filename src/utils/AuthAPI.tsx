@@ -2,6 +2,7 @@ import axios from 'axios'
 import { iData } from '../pages/desktop/auth/RegisterScreen'
 
 const URL = "https://social-connect-797u.onrender.com/api/social/auth"
+const URL2 = "https://localhost:5544/api/with-google/google-auth"
 
 export const createAccount = async (data: iData) => {
     try {
@@ -36,6 +37,15 @@ export const verifyAccount = async (id: string, token: string) => {
         }).catch(err => {
             console.log(err)
         })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const GoogleAuth = async () => {
+    try {
+        return await axios.get(`${URL2}`)
 
     } catch (error) {
         console.log(error)

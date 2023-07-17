@@ -6,7 +6,7 @@ import pix from "../../../assets/myPix.png"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { createAccount } from "../../../utils/AuthAPI"
+import { GoogleAuth, createAccount } from "../../../utils/AuthAPI"
 import Swal from "sweetalert2"
 import { Link, useNavigate } from "react-router-dom"
 
@@ -71,9 +71,9 @@ const RegisterTabScreen = () => {
                 <div className="w-[300px] " >
 
 
-                    <div className="rounded-sm border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center  " >
+                    <div className="rounded border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center pb-1 " >
                         {/* logo */}
-                        <div className="text-[20px] font-semibold my-2 " >logo</div>
+                        <div className="text-[20px] font-semibold my-2 " >AJ Connect</div>
                         {/* content */}
                         <div className="w-[70%] text-xs text-center mb-4" >Sign up to see Photes and Video from your Friends.</div>
 
@@ -81,13 +81,21 @@ const RegisterTabScreen = () => {
                         <div className="text-xs font-semibold mb-3" >Log in with</div>
 
                         <div className="flex items-center mb-4" >
-                            <div className="mx-2 text-[dodgerblue] "  >
+                            <div className="mx-2 text-[dodgerblue] hover:cursor-pointer "  >
                                 <BsFacebook />
                             </div>
-                            <div className="mx-2 text-[23px]" >
+                            <div className="mx-2 text-[23px] hover:cursor-pointer" >
                                 <AiFillApple />
                             </div>
-                            <div className="mx-2" >
+                            <div className="mx-2 hover:cursor-pointer"
+                                onClick={() => {
+                                    GoogleAuth().then(() => {
+                                        console.log("awesome")
+                                    }).catch(err => {
+                                        console.log(err)
+                                    })
+                                }}
+                            >
                                 <FcGoogle />
                             </div>
                         </div>
@@ -109,7 +117,7 @@ const RegisterTabScreen = () => {
                                 <input
                                     {...register("email")}
                                     placeholder="Eneter your Email "
-                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
                                 />
                                 {
                                     errors.email && <div className="text-[10px] text-end capitalize text-red-500 ">Email Error</div>
@@ -122,7 +130,7 @@ const RegisterTabScreen = () => {
                                 <input
                                     {...register("password")}
                                     placeholder="Eneter your Password"
-                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
                                 />
                                 {
                                     errors.password && <div className="text-[10px] text-end capitalize text-red-500 ">Password Error</div>
@@ -134,7 +142,7 @@ const RegisterTabScreen = () => {
                                 <input
                                     {...register("confirm")}
                                     placeholder="Eneter your Confrim Password "
-                                    className="text-sm border-orange-200  p-1 border w-[100%] outline-none"
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
                                 />
                                 {errors.confirm && <div className="text-[10px] text-end capitalize text-red-500 ">Confirm Password Error</div>}
                             </div>
