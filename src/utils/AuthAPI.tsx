@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 import { iData } from '../pages/desktop/auth/RegisterScreen'
 
 const URL = "https://social-connect-797u.onrender.com/api/social/auth"
@@ -21,9 +21,6 @@ export const signIncreateAccount = async (data: iData) => {
         return await axios.post(`${URL}/signin`, data).then((res) => {
             // console.log(res)
             return res
-        }).catch(err => {
-
-            // console.log(err)
         })
 
     } catch (error) {

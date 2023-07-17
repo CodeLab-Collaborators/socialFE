@@ -27,7 +27,7 @@ const SignInScreen = () => {
         password: yup.string().required(),
     })
 
-    const { register, reset, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(authSchema)
     })
 
