@@ -53,7 +53,7 @@ const RegisterTabScreen = () => {
     return (
         <div className="w-[100%] flex mb-[40px] h-full" >
             <div className="w-[100vw] flex 
-            justify-center mt-[40px]
+            justify-center  items-center
            
             
             ">
