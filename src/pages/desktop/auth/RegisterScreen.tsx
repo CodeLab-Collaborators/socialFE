@@ -22,8 +22,6 @@ const RegisterScreen = () => {
 
     const navigate = useNavigate()
     const authSchema = yup.object({
-        userName: yup.string().required(),
-        fullName: yup.string().required(),
         email: yup.string().required(),
         password: yup.string().required(),
         confirm: yup.string().oneOf([yup.ref("password")])
@@ -104,29 +102,9 @@ const RegisterScreen = () => {
 
                         <form
                             className="flex flex-col items-center  w-[95%] mt-2">
-                            <div className="flex flex-col w-[90%] mt-3" >
-                                <div className="text-xs capitalize" >User Name</div>
-                                <input
-                                    {...register("userName")}
-                                    placeholder="Eneter your User Name "
-                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
-                                />
-                                {
-                                    errors.userName && <div className="text-[10px] text-end capitalize text-red-500 ">User Name Error</div>
-                                }
-                            </div>
 
-                            <div className="flex flex-col w-[90%] mt-3" >
-                                <div className="text-xs capitalize" >Full Name</div>
-                                <input
-                                    {...register("fullName")}
-                                    placeholder="Eneter your Full Name "
-                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
-                                />
-                                {
-                                    errors.fullName && <div className="text-[10px] text-end capitalize text-red-500 ">Full Name Error</div>
-                                }
-                            </div>
+
+
 
                             <div className="flex flex-col w-[90%] mt-3" >
                                 <div className="text-xs capitalize" >Email</div>
