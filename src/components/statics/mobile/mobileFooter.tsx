@@ -4,7 +4,7 @@ import { Icons, ProfilePhoto } from "../..";
 import { TfiSearch } from "react-icons/tfi";
 import { PiChatTextThin, PiHouseSimpleThin } from "react-icons/pi";
 import { PiNotificationThin } from "react-icons/pi";
-import ava from "../../../assets/pr1.webp";
+import ava from "../../../assets/tony.jpg";
 
 const MobileFooter = () => {
   return (

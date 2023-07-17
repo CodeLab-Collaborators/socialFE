@@ -18,7 +18,7 @@ const ProfilePhoto: React.FC<iProfile> = ({ size, avatar }) => {
           height: "100%",
           borderRadius: "50%",
           objectFit: "cover",
-          objectPosition: "center",
+          objectPosition: "top",
         }}
         src={avatar}
         alt="A"

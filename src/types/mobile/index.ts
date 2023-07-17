@@ -25,3 +25,18 @@ export type iConAndText = {
   iconColor?: string;
   textColor?: string;
 };
+
+export interface iPostHeading {
+  name: string;
+  profilePhoto: any;
+  time: string;
+  title: string;
+}
+
+export interface iPosts extends iPostHeading {
+  postCover: any;
+  comments: number;
+  rePosts: number;
+  views: number;
+  reactions: number;
+}

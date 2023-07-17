@@ -25,7 +25,7 @@ const DisplayOver = () => {
           ) : (
             <div
               onClick={comeIn}
-              className="bg-cyan-600 flex items-center justify-center text-xl text-white w-[50px] h-[50px] rounded-[50%]">
+              className="bg-[#e4410f] flex items-center justify-center text-xl text-white w-[50px] h-[50px] rounded-[50%]">
               <LiaPlusSolid />
             </div>
           )}
