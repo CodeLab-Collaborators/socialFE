@@ -9,27 +9,27 @@ const More = () => {
   return (
     <div className="flex flex-col gap-[10px]">
       <div className="flex justify-center">
-        <div className="flex flex-col items-center gap-[10px]">
+        <div className="flex flex-col justify-center items-center gap-[10px]">
           <TextAndIcon
-            backgroundColor="white"
-            iconColor="cyan-600"
-            size="38px"
+            backgroundColor="#e4410f"
+            iconColor="white"
+            size="13px"
             text="Videos"
             icon={<GoVideo />}
           />
           <TextAndIcon
-            backgroundColor="white"
-            iconColor="cyan-600"
-            size="38px"
+            backgroundColor="#e4410f"
+            iconColor="white"
+            size="13px"
             text="Photos"
             icon={<HiOutlinePhoto />}
           />
         </div>
       </div>
       <TextAndIcon
-        backgroundColor="cyan-600"
+        backgroundColor="#e4410f"
         iconColor="white"
-        size="50px"
+        size="23px"
         text="Yan"
         icon={<LiaLeafSolid />}
       />
