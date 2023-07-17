@@ -15,7 +15,7 @@ export const createUser = async ({
   username,
   password,
 }: CreateUserParams): Promise<CreateUserResponse> => {
-  const response = await axios.post(`${URl}/api/social/user/create`, {
+  const response = await axios.post(`${URl}/api/social/auth/create`, {
     name,
     email,
     password,

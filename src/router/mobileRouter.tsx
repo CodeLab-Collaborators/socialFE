@@ -8,9 +8,12 @@ export const mobileRouter = createBrowserRouter([
     path: "/",
     element: <MobileLayOut />,
     children: [
-      { index: true, element: <MobileStart /> },
       {
-        path: "signup",
+        index: true,
+        element: <MobileStart />
+      },
+      {
+        path: "register",
         element: <Register />,
       },
     ],

@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
-import { iData } from '../components/common/desktopLayout/auth/RegisterScreen'
+import { iData } from '../pages/desktop/auth/RegisterScreen'
 
 const URL = "https://social-connect-797u.onrender.com/api/social/auth"
 
@@ -18,14 +18,17 @@ export const createAccount = async (data: iData) => {
 
 export const signIncreateAccount = async (data: iData) => {
     try {
-        return await axios.post(`${URL}/create`, data).then((res) => {
+        return await axios.post(`${URL}/signin`, data).then((res) => {
+            // console.log(res)
             return res
         }).catch(err => {
-            console.log(err)
+
+            // console.log(err)
         })
 
     } catch (error) {
-        console.log(error)
+        return error
+        // console.log(error)
     }
 }
 

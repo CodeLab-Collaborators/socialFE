@@ -1,12 +1,12 @@
 import { BsFacebook } from "react-icons/bs"
 import { AiFillApple } from "react-icons/ai"
 import { FcGoogle } from "react-icons/fc"
-import pix from "../../../../assets/myPix.png"
+import pix from "../../../assets/myPix.png"
 import { useEffect } from "react"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { signIncreateAccount, verifyAccount } from "../../../../utils/AuthAPI"
+import { signIncreateAccount, verifyAccount } from "../../../utils/AuthAPI"
 import Swal from "sweetalert2"
 import { Link, useNavigate, useParams } from "react-router-dom"
 
@@ -35,16 +35,32 @@ const SignInScreen = () => {
         const { email, password } = data
 
         await signIncreateAccount({ email, password }).then(async (res: any) => {
+            console.log("Reading: ", res.data.data)
+
+
             await Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: `${res?.data.message}`,
+                title: `${res.data.message}`,
                 showConfirmButton: false,
                 timer: 2500
             }).then(() => {
                 navigate("/home")
             })
+        }).catch(async (err) => {
+
+            if ((err === undefined) === false) {
+                await Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: `Error in your cridentials`,
+                    showConfirmButton: false,
+                    timer: 3500
+                })
+            }
         })
+
+
 
         // reset()
     })
@@ -61,9 +77,9 @@ const SignInScreen = () => {
 
     return (
         <div className="w-[100%] flex mb-[40px] h-full" >
-            <div className="w-[100vw] flex 
-            justify-center my-[40px]
-            h-[100vh]
+            <div className="w-[100vw] flex mt-[40px]
+            justify-center 
+          
             
             ">
                 <div
@@ -80,7 +96,7 @@ const SignInScreen = () => {
                 <div className="w-[300px] " >
 
 
-                    <div className="rounded-sm border-[purple] w-[300px] border p-1 flex flex-col justify-center items-center  " >
+                    <div className="rounded-sm border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center  " >
                         {/* logo */}
                         <div className="text-[20px] font-semibold my-2 " >logo</div>
                         {/* content */}
@@ -102,9 +118,9 @@ const SignInScreen = () => {
                         </div>
 
                         <div className="flex items-center  w-[85%] ">
-                            <div className="rounded-sm border-b-purple-100 border  w-[90%]  " />
+                            <div className="rounded-sm border-b-orange-200 border  w-[90%]  " />
                             <div className="mx-2 text-xs text-black" >OR</div>
-                            <div className="rounded-sm border-b-purple-100 border  w-[90%]  " />
+                            <div className="rounded-sm border-b-orange-200 border  w-[90%]  " />
                         </div>
 
                         {/* Form */}
@@ -117,7 +133,7 @@ const SignInScreen = () => {
                                 <input
                                     {...register("email")}
                                     placeholder="Eneter your Email "
-                                    className="text-sm border-purple-200 p-1 border w-[100%] outline-none"
+                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
                                 />
                                 {
                                     errors.email && <div className="text-[10px] text-end capitalize text-red-500 ">Email Error</div>
@@ -133,7 +149,7 @@ const SignInScreen = () => {
                                 <input
                                     {...register("password")}
                                     placeholder="Eneter your Password"
-                                    className="text-sm border-purple-200 p-1 border w-[100%] outline-none"
+                                    className="text-sm border-orange-200 p-1 border w-[100%] outline-none"
                                 />
                                 {
                                     errors.password && <div className="text-[10px] text-end capitalize text-red-500 ">Password Error</div>
@@ -144,7 +160,7 @@ const SignInScreen = () => {
 
 
 
-                        <button className=" mt-5 bg-purple-900 font-semibold  rounded-sm text-white w-[97%] py-2 hover:scale-[1.015] transition-all duration-300" type="submit" onClick={() => {
+                        <button className=" mt-5 bg-[#F97316] font-semibold  rounded-sm text-white w-[97%] py-2 hover:scale-[1.015] transition-all duration-300 mb-3" type="submit" onClick={() => {
 
                             onSubmit().then(() => {
                                 console.log("resolve")
@@ -159,7 +175,7 @@ const SignInScreen = () => {
 
 
                     <div className="flex items-center justify-center  w-[100%] my-4 p-3 border text-sm  ">
-                        Don't Have an Account? <Link to="/" className="no-underline text-white" ><span className="mx-2 text-[dodgerblue] font-semibold cursor-pointer hover:scale-105 transition-all duration-300" >Create One </span></Link>
+                        Don't Have an Account? <Link to="/register" className="no-underline text-white" ><span className="mx-2 text-[#F97316] font-semibold cursor-pointer hover:scale-105 transition-all duration-300" >Create One </span></Link>
                     </div>
                 </div>
 
