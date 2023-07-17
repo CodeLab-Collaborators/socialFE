@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
+import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -14,5 +15,9 @@ export const mobileRouter = createBrowserRouter([
         element: <Register />,
       },
     ],
+  },
+  {
+    path: "/user-profile",
+    element: <UserProfilePage />,
   },
 ]);
