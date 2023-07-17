@@ -175,7 +175,7 @@ const SignInTabScreen = () => {
 
 
                     <div className="flex items-center justify-center  w-[100%] my-4 p-3 border text-sm  ">
-                        Don't Have an Account? <Link to="/register" className="no-underline text-white" ><span className="mx-2 text-[#F97316] font-semibold cursor-pointer hover:scale-105 transition-all duration-300" >Create One </span></Link>
+                        Don't Have an Account? <Link to="/register" className="no-underline text-white" ><span className="mx-2 text-[#F97316] font-semibold cursor-pointer hover:scale-105 transition-all duration-300 text-sm" >Create One </span></Link>
                     </div>
                 </div>
 

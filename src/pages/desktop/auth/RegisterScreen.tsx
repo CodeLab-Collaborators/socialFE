@@ -168,10 +168,10 @@ const RegisterScreen = () => {
 
 
 
-                    <div className="flex items-center justify-center  w-[100%] my-4 p-2 border  ">
+                    <div className="flex items-center justify-center  w-[100%] my-4 p-2 border text-sm ">
                         Have an Account?
                         <Link to="/" className="no-underline text-white" >
-                            <span className="mx-2 text-[#F97316] font-semibold cursor-pointer hover:scale-105 transition-all duration-300" >Log In</span></Link>
+                            <span className="mx-2 text-[#F97316] font-semibold cursor-pointer hover:scale-105 transition-all duration-300 text-sm" >Log In</span></Link>
                     </div>
                 </div>
 
