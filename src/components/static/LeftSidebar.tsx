@@ -6,7 +6,7 @@ import img from "../../assets/myPix.png"
 
 const LeftSidebar = () => {
   return (
-      <div className="w-[18%] h-[100vh] bg-[#fff] border-r border-[#DBDBDB] column pt-[40px] pl-[20px] pr-[20px]">
+      <div className="w-[18%] h-[100vh] bg-[#fff] border-r border-[#DBDBDB] column pt-[40px] pl-[20px] pr-[20px] fixed">
           <h2 className="text-[18px]">Ajegunle_Connect</h2>
 
       <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[30px] hover:bg-[#F2F2F2] cursor-pointer">
