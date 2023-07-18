@@ -3,6 +3,7 @@ import { BiSearch, BiMoviePlay } from "react-icons/bi"
 import { MdOutlineExplore } from "react-icons/md"
 import { BsSend, BsPlusSquare } from "react-icons/bs"
 import img from "../../assets/myPix.png"
+import { NavLink } from "react-router-dom"
 
 const LeftSidebar = () => {
   return (
@@ -44,10 +45,12 @@ const LeftSidebar = () => {
         <h3 className="text-[#202020] ml-[15px]">Create</h3>
       </div>
 
-           <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[8px] hover:bg-[#F2F2F2] cursor-pointer">
+          <NavLink to="profile_page">
+              <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[8px] hover:bg-[#F2F2F2] cursor-pointer">
         <img src={img} className="rounded-xl h-[26px] w-[26px] object-cover" />
         <h3 className="text-[#202020] ml-[15px]">Profile</h3>
       </div>
+           </NavLink>
 
       <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[30px] hover:bg-[#F2F2F2] cursor-pointer">
         <div className="text-[25px]"><AiOutlineMenu /></div>
