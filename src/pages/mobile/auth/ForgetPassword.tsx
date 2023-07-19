@@ -5,13 +5,13 @@ import Globalbutton from "../../../reusables/globalbutton";
 
 const ForgetPassword = () => {
   return (
-    <div>
+    <div className="">
       {/* Header */}
       <ForgetPassHeader />
 
       {/* container */}
-      <div className="w-full h-full grid place-items-center mt-10">
-        <div className="w-[80%] h-full border rounded-sm  py-7 px-3 flex justify-center items-center flex-col max-sm:w-full">
+      <div className="w-full  grid place-items-center mt-10">
+        <div className="w-[80%] min-h-[90vh] border rounded-sm  py-7 px-3 flex justify-center items-center flex-col max-sm:w-full relative">
           {/* icon */}
           <div className="rounded-full  border-gray-700 px-3 py-3 border-2">
             <p className="text-6xl font-thin">
@@ -42,6 +42,23 @@ const ForgetPassword = () => {
               width="full"
             />
           </div>
+
+          {/* or Create account */}
+          <div className="relative mt-8 flex flex-col w-[70%] m-auto">
+            <hr className="my-5" />
+            <p className="bg-white p-1 px-4 text-sm font-medium w-fit absolute top-[5px] right-[42%] text-gray-500">
+              OR
+            </p>
+            <button className="text-[13px] text-gray-600 font-semibold mt-2">
+              Create new account
+            </button>
+          </div>
+        </div>
+
+        {/* back to login */}
+
+        <div className=" border-b bottom-0 w-full py-3 mb-10 text-center text-[12px] font-semibold bg-[#FAFAFA] ">
+          Back to login
         </div>
       </div>
     </div>

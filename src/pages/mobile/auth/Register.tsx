@@ -51,9 +51,13 @@ const Register = () => {
       {/* auth holder */}
       <div className="w-[70%] h-[90%] flex flex-col max-sm:w-[80%]">
         {/* Logo */}
-        <div className="h-[15%]  grid place-items-center  font-black text-3xl tracking-tighter">
-          AJ connect
-          <p className="text-sm font-medium text-gray-400 w-[70%] text-center mt-4 max-sm:w-full">
+        <div className="h-[15%]  grid place-items-center  font-black text-3xl">
+          <Link to="/">
+            {" "}
+            <p className="tracking-tighter text-orange-500"> AJconnect</p>
+          </Link>
+
+          <p className="text-sm font-medium text-gray-400 w-[50%] text-center mt-4 max-sm:w-full">
             Sign up to know what's hot and trending on planet earth
           </p>
           {/* button */}
