@@ -52,7 +52,9 @@ const Sign_in = () => {
               Log in with Google
             </p>
           </span>
-          <p className="text-xs text-orange-800">Forgot password?</p>
+          <Link to="password-reset">
+            <p className="text-xs text-orange-800">Forgot password?</p>
+          </Link>
 
           {/* route to sign up*/}
 
