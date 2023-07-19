@@ -1,5 +1,6 @@
 import {
   Comments,
+  ProfilePhoto,
   SinglePostHeader,
   SinglePostTexts,
   SinglePostTitle,
@@ -28,14 +29,35 @@ const SinglePost = () => {
         <LiaRetweetSolid />
         <BsSend />
       </div>
-      <div className="text-gray-500 text-xs px-4 flex items-center gap-2">
+      <div className="text-gray-500 border-b-[1px] border-b-slate-200 pb-4 text-xs px-4 flex items-center gap-2">
         <div>67 replies</div>
         <div className="flex items-center text-[3px]">
           <BsFillCircleFill />
         </div>
         <div>1,040 likes</div>
       </div>
-      <Comments />
+      {/* comments section */}
+      <Comments
+        views="1,040"
+        replies="67"
+        name="Pepper Potts"
+        time="12h"
+        avatar={ava}
+        comment="   Will the GOAT turn fortunes around and gey Inter Miami off from bottom
+          of the MLS ? 🤔"
+      />
+      <div className="fixed bottom-1 w-full flex justify-center">
+        <div className="w-[90%] h-fit flex gap-3 p-1 bg-slate-100 rounded-3xl">
+          <div className="h-fit w-fit">
+            <ProfilePhoto avatar={ava} size="30px" />
+          </div>
+          <input
+            className="placeholder:text-[lightgrey] placeholder:text-xs text-xs bg-transparent focus:outline-none
+          "
+            placeholder="Reply to Pepper Potts"
+          />
+        </div>
+      </div>
     </div>
   );
 };
