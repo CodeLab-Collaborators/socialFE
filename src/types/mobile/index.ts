@@ -56,3 +56,17 @@ export type iSinglePostTitle = {
   name: string;
   time: string;
 };
+
+export type iPostTexts = {
+  message1: string;
+  message2: string;
+};
+
+export type iComment = {
+  avatar: any;
+  name: string;
+  time: string;
+  comment: string;
+  replies: string;
+  views: string;
+};
