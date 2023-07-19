@@ -36,9 +36,8 @@ const Register = () => {
     mutationKey: ["createduser"],
     mutationFn: createUser,
 
-    onSuccess: (myData) => {
-      console.log("user", myData);
-      //   dispatch(login(myData.data));
+    onSuccess: () => {
+      // console.log("user", myData);
       Swal.fire({
         title: "User registered sucessfully",
         html: "redirecting to login",
@@ -53,9 +52,9 @@ const Register = () => {
   });
 
   const Submit = handleSubmit(async (data: any) => {
+    console.log("first", data);
     posting.mutate(data);
     setUsers(users);
-    console.log("first");
   });
 
   return (
@@ -136,7 +135,7 @@ const Register = () => {
             <Globalbutton
               title="Sign up"
               width="full"
-              onclick={() => {}}
+              // onclick={() => {}}
               buttonType="submit"
             />
           </div>

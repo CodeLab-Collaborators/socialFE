@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../../../pages/mobile/common/Footer";
+import DestopFooter from "../../static/DestopFooter"
 
 const MobileLayOut = () => {
   return (
     <div className="overflow-x-hidden">
       <Outlet />
-      <Footer />
+      <DestopFooter />
     </div>
   );
 };

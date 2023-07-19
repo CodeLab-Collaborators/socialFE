@@ -58,7 +58,7 @@ const Sign_in = () => {
 
           <span className="flex mt-8 items-center gap-1 text-[13px]">
             <p>Don't have an account?</p>
-            <Link to="signup">
+            <Link to="register">
               <p className=" font-semibold text-orange-500">Sign up</p>
             </Link>
           </span>

@@ -9,12 +9,13 @@ export type inputData = {
 export type buttonData = {
   title: string;
   buttonType: "button" | "submit" | "reset";
-  onclick: React.MouseEventHandler<HTMLButtonElement>;
+  onclick?: React.MouseEventHandler<HTMLButtonElement>;
   width: string;
 };
 
-export type NewUsers = {
+export type CreateUserParams = {
   name: string;
   email: string;
+  username: string;
   password: string;
 };

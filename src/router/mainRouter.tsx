@@ -2,9 +2,11 @@ import { RouterProvider } from "react-router-dom"
 import { desktopRouter } from "./desktopRouter"
 import { tabletRouter } from "./tabletRouter"
 import { mobileRouter } from "./mobileRouter"
+import { useReload } from "../hooks/useReload"
 
 
 export const MainRouter = () => {
+    useReload()
     return (
         <div>
             <div className='hidden sm:hidden md:hidden lg:flex' >
