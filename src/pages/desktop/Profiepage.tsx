@@ -9,7 +9,7 @@ const Profiepage = () => {
           <LeftSidebar />
           <div className="flex-[1] h-[100%] column items-center justify-center bg-[#fff] pt-[40px]">
               
-              <div className="flex h-[100%] bg-[#fff] justify-center pb-[55px]">
+              <div className="flex h-[100%] bg-[#fff] justify-center pb-[30px]">
                   <img src={img} className="w-[130px] h-[130px] rounded-[100px] object-cover" />
                   {/* <div className="text-[green]">hfhfhfhf</div> */}
 
@@ -36,8 +36,14 @@ const Profiepage = () => {
         </div>
              </div>
         
-        <div className=" w-[100%] flex justify-center items-center">
-          <div className="w-[65%] h-[2px] bg-[#DBDBDB] ml-[230px]"></div>
+        <div className=" w-[20%] flex justify-center items-center">
+          <div className="w-[15%] h-[2px] bg-[#DBDBDB] ml-[230px]"></div>
+        </div>
+
+        <div className="flex w-[100%] h-[100%] justify-center bg-[#fff]">
+          <h4 className="ml-[120px]">POSTS</h4>
+          <h4 className="ml-[50px]">SAVED</h4>
+          <h4 className="ml-[50px]">TAGGED</h4>
         </div>
           </div>
     </div>
