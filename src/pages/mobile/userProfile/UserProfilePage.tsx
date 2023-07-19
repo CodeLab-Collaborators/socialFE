@@ -13,7 +13,7 @@ const UserProfilePage = () => {
         <div className="w-[90%] h-[90%] flex flex-col items-center">
           <div className="w-full h-[50px] flex items-center justify-between">
             <div className="w-[32%] h-[90%]  flex items-center justify-between">
-              <h3 className="font-bold">DevSylvie</h3>
+              <h3 className="font-bold max-sm:text-xs">DevSylvie</h3>
               <h3 className="font-bold">
                 <SlArrowDown />
               </h3>
