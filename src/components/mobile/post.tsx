@@ -1,4 +1,4 @@
-import { IconAndText, Icons, PostHead, ProfilePhoto } from "..";
+import { IconAndText, Icons, GeneralPostHead, ProfilePhoto } from "..";
 import { PiChatCircleLight } from "react-icons/pi";
 import { LiaRetweetSolid } from "react-icons/lia";
 import { AiOutlineEye } from "react-icons/ai";
@@ -23,7 +23,7 @@ const Post: React.FC<iPosts> = ({
         <ProfilePhoto avatar={profilePhoto} size="33px" />
       </div>
       <div className="flex-1">
-        <PostHead name={name} time={time} title={title} />
+        <GeneralPostHead name={name} time={time} title={title} />
         <div className="mt-2 flex justify-end">
           <div className="w-full">
             <div className=" rounded-2xl">
