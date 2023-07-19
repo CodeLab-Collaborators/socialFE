@@ -40,3 +40,19 @@ export interface iPosts extends iPostHeading {
   views: number;
   reactions: number;
 }
+
+export type iRecent = {
+  avatar: any;
+  name: string;
+  userName: string;
+};
+
+export type iSuggest = {
+  suggestion: string;
+};
+
+export type iSinglePostTitle = {
+  avatar: any;
+  name: string;
+  time: string;
+};

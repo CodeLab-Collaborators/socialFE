@@ -1,7 +1,7 @@
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { iPostHeading } from "../../../types";
 
-const PostHead: React.FC<iPostHeading> = ({ name, time, title }) => {
+const GeneralPostHead: React.FC<iPostHeading> = ({ name, time, title }) => {
   return (
     <div className="flex gap-2">
       <div className="text-xs text-slate-700">
@@ -25,4 +25,4 @@ const PostHead: React.FC<iPostHeading> = ({ name, time, title }) => {
   );
 };
 
-export default PostHead;
+export default GeneralPostHead;
