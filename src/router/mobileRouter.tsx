@@ -5,6 +5,7 @@ import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
 import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
+import ForgetPassword from "../pages/mobile/auth/ForgetPassword";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const mobileRouter = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "password-reset",
+        element: <ForgetPassword />,
       },
     ],
   },
