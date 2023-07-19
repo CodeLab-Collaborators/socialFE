@@ -76,9 +76,9 @@ const SignInScreen = () => {
     })
 
     return (
-        <div className="w-[100%] flex mb-[40px] h-[89vh] " >
+        <div className="w-[100%] flex mb-[40px] h-[89vh] overflow-hidden" >
             <div className="w-[100vw] flex items-center
-            justify-center 
+            justify-center overflow-hidden
           
             
             ">
@@ -96,7 +96,7 @@ const SignInScreen = () => {
                 <div className="w-[300px] " >
 
 
-                    <div className="rounded border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center pb-1 " >
+                    <div className="rounded border-orange-200 w-[300px] border p-1 flex flex-col justify-center items-center pb-1 overflow-hidden" >
                         {/* logo */}
                         <div className="text-[20px] font-semibold my-2 " >AJ Connect</div>
                         {/* content */}
@@ -133,7 +133,7 @@ const SignInScreen = () => {
                                 <input
                                     {...register("email")}
                                     placeholder="Eneter your Email "
-                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-[black] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
                                 />
                                 {
                                     errors.email && <div className="text-[10px] text-end capitalize text-red-500 ">Email Error</div>
