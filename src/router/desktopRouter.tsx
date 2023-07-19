@@ -32,11 +32,11 @@ export const desktopRouter = createBrowserRouter([
                 path: "api/social/auth/:id/:token/verify",
                 element: <SignInScreen />
             },
-            {
+        ]
+
+    },
+    {
                 path: "profile_page",
                 element: <Profiepage/>
             },
-        ]
-
-    }
 ])
