@@ -13,7 +13,7 @@ export const mobileRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MobileStart />
+        element: <MobileStart />,
       },
       {
         path: "register",
@@ -21,16 +21,13 @@ export const mobileRouter = createBrowserRouter([
       },
     ],
   },
-<<<<<<< HEAD
   {
     path: "/user-profile",
     element: <UserProfilePage />,
   },
-=======
-      {
+  {
     path: "/home",
     element: <MobileHomeLayOut />,
     children: [{ index: true, element: <MobileHomeStart /> }],
-    }
->>>>>>> f44f003bf5165ff694d33e5c1dcf8faaf43dff9d
+  },
 ]);
