@@ -8,3 +8,5 @@ export { default as IconAndText } from "./iconAndText";
 export { default as Recents } from "./recents";
 export { default as SearchSuggestion } from "./searchSuggestion";
 export { default as SinglePostTitle } from "./singlePostTitle";
+export { default as SinglePostTexts } from "./singlePostTexts";
+export { default as Comments } from "./comments";
