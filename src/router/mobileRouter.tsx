@@ -28,6 +28,7 @@ export const mobileRouter = createBrowserRouter([
   {
     path: "/home",
     element: <MobileHomeLayOut />,
+
     children: [
       {
         index: true,
