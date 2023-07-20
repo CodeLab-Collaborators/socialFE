@@ -1,13 +1,21 @@
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import {
+  AiOutlineArrowLeft,
+  AiFillEye,
+  AiOutlineSafety,
+  AiFillTwitterSquare,
+} from "react-icons/ai";
 import SettingsProps from "./SettingsProps";
 import { VscAccount } from "react-icons/vsc";
-import { GrSecure } from "react-icons/gr";
+import { GrSecure, GrNotification } from "react-icons/gr";
+import { FaMoneyBills } from "react-icons/fa6";
+import { BiUniversalAccess } from "react-icons/bi";
+import { HiOutlineDotsCircleHorizontal } from "react-icons/hi";
 
 const UserSettingsPage = () => {
   return (
     <div>
-      <div className="w-full h-screen bg-red-400 flex items-center justify-center">
-        <div className="w-[90%] h-[90%] bg-blue-900">
+      <div className="w-full py-5 bg-blue-900 flex items-center justify-center">
+        <div className="w-[90%] h-[90%] ">
           <div className="flex text-white items-center justify-between w-[50%]">
             <div className="text-white text-2xl">
               <AiOutlineArrowLeft />
@@ -42,37 +50,37 @@ const UserSettingsPage = () => {
           />
           <SettingsProps
             settingsDetails="Manage your subscription`s features including Undo Tweet timing"
-            settingsIcon={<GrSecure />}
+            settingsIcon={<AiFillTwitterSquare />}
             settingsTittle="Twitter Blue"
           />
           <SettingsProps
             settingsDetails="See how you can make money on twitter and manage your monetisation options"
-            settingsIcon={<GrSecure />}
+            settingsIcon={<FaMoneyBills />}
             settingsTittle="Monetisation"
           />
           <SettingsProps
             settingsDetails="Manage what information you see and share on twitter"
-            settingsIcon={<GrSecure />}
+            settingsIcon={<AiOutlineSafety />}
             settingsTittle="Privacy and safety"
           />
           <SettingsProps
             settingsDetails="Select the kinds of notification you get about your activities, interests and reccomendations"
-            settingsIcon={<GrSecure />}
+            settingsIcon={<GrNotification />}
             settingsTittle="Notifications"
           />
           <SettingsProps
             settingsDetails="Manage how Twitter content is displayed to you"
-            settingsIcon={<GrSecure />}
+            settingsIcon={<BiUniversalAccess />}
             settingsTittle="Accessibilty, display and languages"
           />
           <SettingsProps
             settingsDetails="Check out other places for helpful information to learn more about twitter products and services"
-            settingsIcon={<GrSecure />}
+            settingsIcon={<HiOutlineDotsCircleHorizontal />}
             settingsTittle="Additional resources"
           />
           <SettingsProps
             settingsDetails=""
-            settingsIcon={<GrSecure />}
+            settingsIcon={<AiFillEye />}
             settingsTittle="Proxy"
           />
         </div>

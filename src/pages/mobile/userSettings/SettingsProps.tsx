@@ -13,8 +13,8 @@ const SettingsProps: React.FC<SettingsProp> = ({
 }) => {
   return (
     <div>
-      <div className="flex w-full bg-orange-500 items-center justify-between py-3 text-white mt-5">
-        <div className="w-[10%] text-3xl">{settingsIcon}</div>
+      <div className="flex w-full items-center justify-between py-3 text-white mt-5">
+        <div className="w-[10%] text-3xl text-white">{settingsIcon}</div>
         <div className="w-[80%]">
           <h3 className="font-bold">{settingsTittle}</h3>
           <p className="text-sm">{settingsDetails}</p>
