@@ -1,5 +1,4 @@
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { VscAccount } from "react-icons/vsc";
 
 const UserSettingsPage = () => {
   return (
@@ -24,18 +23,6 @@ const UserSettingsPage = () => {
               id=""
               placeholder="Search Settings"
             />
-          </div>
-          <div className="flex w-full bg-orange-500 items-center justify-between py-3">
-            <div className="w-[10%]">
-              <VscAccount />
-            </div>
-            <div className="w-[80%]">
-              <h3>Your account</h3>
-              <p>
-                See information about your account, download an archive of your
-                data or learn about your account deactivation options
-              </p>
-            </div>
           </div>
         </div>
       </div>
