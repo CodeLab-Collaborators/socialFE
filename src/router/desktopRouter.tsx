@@ -5,6 +5,7 @@ import RegisterScreen from "../pages/desktop/auth/RegisterScreen"
 import RegisterInfo from "../pages/desktop/auth/RegisterInfo"
 import SignInScreen from "../pages/desktop/auth/SignIn"
 import Profiepage from "../pages/desktop/Profiepage"
+import Settingsprofile from "../pages/desktop/Settingsprofile"
 import NotificationPage from "../pages/desktop/NotificationPage"
 
 
@@ -38,11 +39,11 @@ export const desktopRouter = createBrowserRouter([
 
     },
     {
-                path: "profile_page",
-                element: <Profiepage/>
-            },
-            {
-                path:"/notifications",
-                element:<NotificationPage/>
+     path: "profile_page",
+    element: <Profiepage />,
+    },
+      {
+          path:"/notifications",
+            element:<NotificationPage/>
             }
 ])

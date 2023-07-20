@@ -5,6 +5,7 @@ import Profilepost from "./Profilepost"
 import {useState} from "react"
 import Profilesaved from "./Profilesaved"
 import Profiletagged from "./Profiletagged"
+import { NavLink } from "react-router-dom"
 
 
 const Profiepage = () => {
@@ -48,7 +49,9 @@ const Profiepage = () => {
             <div className=" ml-[20px]">
               <div className="flex">
                 <h1 className="text-2xl font-bold">John Doe</h1>
-                <button className="w-[100px] h-[30px] bg-[#252525] text-white rounded-md ml-[40px]">Edit profile</button>
+                  <button className="w-[100px] h-[30px] bg-[#252525] text-white rounded-md ml-[40px]">
+                  Edit profile
+                </button>
                 <div className="text-[30px] ml-[40px]"><CiSettings /></div>
               </div>
 
