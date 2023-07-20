@@ -1,6 +1,7 @@
 import LeftSidebar from "../../components/static/LeftSidebar"
 import {CiSettings} from "react-icons/ci"
 import img from "../../assets/myPix.png"
+import Profilepost from "./Profilepost"
 
 
 const Profiepage = () => {
@@ -10,8 +11,8 @@ const Profiepage = () => {
       
       {/* profile page styling */}
       <div className="w-[100%] justify-end flex">
-        <main className="bg-white h-[100%] flex column justify-center pt-[40px]" style={{ width: "calc(100% - 18%)" }}>
-          <div className="flex">
+        <main className="bg-white h-[100%] column justify-center items-center pt-[40px]" style={{ width: "calc(100% - 18%)" }}>
+          <div className="flex w-[100%] justify-center ">
             <img
             src={img}
             alt="Profile"
@@ -50,6 +51,16 @@ const Profiepage = () => {
             </div>
           </div>
           
+          <div className="flex w-[100%] column justify-center items-center mt-[40px]">
+            <div className="border-t border-[#DBDBDB] w-[90%] items-center justify-center column">
+              <div className="flex mt-[25px] w-[100%] justify-center">
+                <h4 className="text-[14px] mr-[40px]">POSTS</h4>
+                <h4 className="text-[14px] mr-[40px]">SAVED</h4>
+                <h4 className="text-[14px] mr-[40px]">TAGGED</h4>
+              </div>
+                <Profilepost />
+            </div>
+          </div>
       </main>
       </div>
           
