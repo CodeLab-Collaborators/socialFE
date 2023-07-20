@@ -10,33 +10,34 @@ import Profiepage from "../pages/desktop/Profiepage"
 export const desktopRouter = createBrowserRouter([
     {
         path: "/",
+        element: <SignInScreen />
+    },
+    {
+        path: "register",
+        element: <RegisterScreen />
+    },
+    {
+        path: "/",
         element: <DesktopLayOut />,
         children: [
             {
                 index: true,
-                element: <SignInScreen />
+                path: "home",
+                element: <DesktopStart />
             },
             {
                 path: "register-info",
                 element: <RegisterInfo />
             },
             {
-                path: "home",
-                element: <DesktopStart />
-            },
-            {
-                path: "register",
-                element: <RegisterScreen />
-            },
-            {
                 path: "api/social/auth/:id/:token/verify",
                 element: <SignInScreen />
             },
-            {
+        ]
+
+    },
+    {
                 path: "profile_page",
                 element: <Profiepage/>
             },
-        ]
-
-    }
 ])

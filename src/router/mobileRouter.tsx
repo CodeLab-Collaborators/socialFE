@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MobileHomeLayOut } from "../components";
-import { MobileHomeStart } from "../pages";
+import { MobileHomeStart, SearchPage, SinglePost } from "../pages";
 import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
 import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
 import UserSettingsPage from "../pages/mobile/userSettings/UserSettingsPage";
 import UserUpdatePage from "../pages/mobile/userUpdate/UserUpdatePage";
+import ForgetPassword from "../pages/mobile/auth/ForgetPassword";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const mobileRouter = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "password-reset",
+        element: <ForgetPassword />,
       },
     ],
   },
@@ -38,6 +43,20 @@ export const mobileRouter = createBrowserRouter([
   {
     path: "/home",
     element: <MobileHomeLayOut />,
-    children: [{ index: true, element: <MobileHomeStart /> }],
+
+    children: [
+      {
+        index: true,
+        element: <MobileHomeStart />,
+      },
+    ],
+  },
+  {
+    path: "/search",
+    element: <SearchPage />,
+  },
+  {
+    path: "/post",
+    element: <SinglePost />,
   },
 ]);

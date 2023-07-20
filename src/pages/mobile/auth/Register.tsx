@@ -2,69 +2,62 @@ import { Link, useNavigate } from "react-router-dom";
 import Globalbutton from "../../../reusables/globalbutton";
 import Input from "../../../reusables/input";
 import * as yup from "yup";
-import Swal from "sweetalert2";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { createUser } from "../../../utils/api/api";
-import { useRecoilState } from "recoil";
-import { ReadNewUsers } from "../../../utils/stateMgt/Recoil";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { createAccountMobile } from "../../../utils/AuthAPI";
+import Swal from "sweetalert2";
+import { CreateUserParams } from "../../../utils/types";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [users, setUsers] = useRecoilState(ReadNewUsers);
-
-  const userSchema = yup
-    .object({
-      name: yup.string().required("please enter a name"),
-      email: yup.string().required("please enter an email"),
-      username: yup.string().required("please enter a username"),
-      password: yup.string().required("please enter a password"),
-    })
-    .required();
-  type formData = yup.InferType<typeof userSchema>;
+  const authSchema = yup.object({
+    email: yup.string().required(),
+    name: yup.string().required(),
+    username: yup.string().required(),
+    password: yup.string().required(),
+  });
 
   const {
-    handleSubmit,
     register,
+    handleSubmit,
     formState: { errors },
-  } = useForm<formData>({
-    resolver: yupResolver(userSchema),
+  } = useForm({
+    resolver: yupResolver(authSchema),
   });
 
-  const posting = useMutation({
-    mutationKey: ["createduser"],
-    mutationFn: createUser,
+  const onSubmit = handleSubmit(async (data: CreateUserParams) => {
+    const { name, username, email, password } = data;
+    console.log(data);
+    console.log("Pushing");
+    await createAccountMobile({ username, email, password, name }).then(
+      async (res: any) => {
+        await Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `${res?.data.message}`,
+          showConfirmButton: false,
+          timer: 2500,
+        }).then(() => {
+          navigate("/user-profile");
+        });
+      }
+    );
 
-    onSuccess: () => {
-      // console.log("user", myData);
-      Swal.fire({
-        title: "User registered sucessfully",
-        html: "redirecting to login",
-        timer: 2000,
-        timerProgressBar: true,
-
-        willClose: () => {
-          navigate("/");
-        },
-      });
-    },
-  });
-
-  const Submit = handleSubmit(async (data: any) => {
-    console.log("first", data);
-    posting.mutate(data);
-    setUsers(users);
+    // reset()
   });
 
   return (
-    <div className="w-screen min-h-[90vh]  max-h-full text-gray-800 flex flex-col items-center justify-center">
+    <div className="w-screen min-h-screen  max-h-full text-gray-800 flex flex-col items-center justify-center">
       {/* auth holder */}
       <div className="w-[70%] h-[90%] flex flex-col max-sm:w-[80%]">
         {/* Logo */}
         <div className="h-[15%]  grid place-items-center  font-black text-3xl">
-          AJ connect
-          <p className="text-sm font-medium text-gray-500 w-[70%] text-center mt-4 max-sm:w-full">
+          <Link to="/">
+            {" "}
+            <p className="tracking-tighter text-orange-500"> AJconnect</p>
+          </Link>
+
+          <p className="text-sm font-medium text-gray-400 w-[50%] text-center mt-4 max-sm:w-full">
             Sign up to know what's hot and trending on planet earth
           </p>
           {/* button */}
@@ -79,7 +72,7 @@ const Register = () => {
         </div>
 
         {/* or */}
-        <div className="relative mt-5 w-[85%] m-auto">
+        <div className="relative mt-2 w-[85%] m-auto">
           <hr className="my-5" />
           <p className="bg-white p-1 px-4 text-sm font-medium w-fit absolute top-[5px] right-[42%] text-gray-500">
             OR
@@ -87,15 +80,7 @@ const Register = () => {
         </div>
 
         {/* form */}
-        <form onSubmit={Submit} className="flex flex-col mb-4">
-          <Input
-            placeholder="Email"
-            inputType="email"
-            characterLength={22}
-            onchange={() => {}}
-            labelName=" email"
-            {...register("email")}
-          />
+        <form className="flex flex-col mb-4">
           <Input
             placeholder="Full Name"
             inputType="text"
@@ -105,22 +90,43 @@ const Register = () => {
             {...register("name")}
           />
           <Input
+            placeholder="Email"
+            inputType="email"
+            characterLength={22}
+            onchange={() => {}}
+            labelName="email"
+            {...register("email")}
+          />
+
+          <Input
             placeholder="username"
             inputType="text"
-            characterLength={17}
+            characterLength={30}
             onchange={() => {}}
-            labelName="Username or email"
+            labelName="username"
             {...register("username")}
           />
-          {errors?.email && errors?.email?.message}
+
           <Input
+            {...register("password")}
             placeholder="password"
             inputType="password"
             characterLength={20}
             onchange={() => {}}
             labelName="Password"
-            {...register("password")}
           />
+          <p className="text-xs text-red-500">
+            {errors?.email && errors?.email?.message}
+          </p>
+          <p className="text-xs text-red-500">
+            {errors?.username && errors?.username?.message}
+          </p>
+          <p className="text-xs text-red-500">
+            {errors?.password && errors?.password?.message}
+          </p>
+          <p className="text-xs text-red-500">
+            {errors?.name && errors?.name?.message}
+          </p>
 
           {/* t and c */}
           <div className="my-5 text-xs text-center text-slate-400">
@@ -129,17 +135,24 @@ const Register = () => {
               Policy
             </p>
           </div>
-
-          {/* register button */}
-          <div className="w-[85%] m-auto max-sm:w-full">
-            <Globalbutton
-              title="Sign up"
-              width="full"
-              // onclick={() => {}}
-              buttonType="submit"
-            />
-          </div>
         </form>
+        {/* register button */}
+        <div className="w-[85%] m-auto max-sm:w-full">
+          <Globalbutton
+            title="Sign up"
+            width="full"
+            onclick={() => {
+              onSubmit()
+                .then(() => {
+                  // console.log("resolve");
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            }}
+            buttonType="submit"
+          />
+        </div>
 
         {/* login container */}
         <span className=" w-full flex justify-center mt-8 items-center gap-1 text-[13px]">

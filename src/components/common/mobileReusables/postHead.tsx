@@ -1,16 +1,9 @@
-import { ProfilePhoto } from ".";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { iPostHeading } from "../../../types";
 
-const PostHead: React.FC<iPostHeading> = ({
-  name,
-  profilePhoto,
-  time,
-  title,
-}) => {
+const GeneralPostHead: React.FC<iPostHeading> = ({ name, time, title }) => {
   return (
     <div className="flex gap-2">
-      <ProfilePhoto avatar={profilePhoto} size="33px" />
       <div className="text-xs text-slate-700">
         <div className="flex gap-1 items-start">
           <div className="font-bold">{name}</div>
@@ -32,4 +25,4 @@ const PostHead: React.FC<iPostHeading> = ({
   );
 };
 
-export default PostHead;
+export default GeneralPostHead;

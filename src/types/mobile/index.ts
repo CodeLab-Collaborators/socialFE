@@ -28,15 +28,36 @@ export type iConAndText = {
 
 export interface iPostHeading {
   name: string;
-  profilePhoto: any;
   time: string;
   title: string;
 }
 
 export interface iPosts extends iPostHeading {
+  profilePhoto: any;
   postCover: any;
   comments: number;
   rePosts: number;
   views: number;
   reactions: number;
 }
+
+export type iRecent = {
+  avatar: any;
+  name: string;
+  userName: string;
+};
+
+export type iSuggest = {
+  suggestion: string;
+};
+
+export type iSinglePostTitle = {
+  avatar: any;
+  name: string;
+  time: string;
+};
+
+export type iPostTexts = {
+  message1: string;
+  message2: string;
+};
