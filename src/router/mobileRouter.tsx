@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MobileHomeLayOut } from "../components";
-import { MobileHomeStart, SearchPage, SinglePost } from "../pages";
+import { SearchPage, SinglePost } from "../pages";
 import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
@@ -43,13 +43,6 @@ export const mobileRouter = createBrowserRouter([
   {
     path: "/home",
     element: <MobileHomeLayOut />,
-
-    children: [
-      {
-        index: true,
-        element: <MobileHomeStart />,
-      },
-    ],
   },
   {
     path: "/search",
