@@ -2,9 +2,25 @@ import LeftSidebar from "../../components/static/LeftSidebar"
 import {CiSettings} from "react-icons/ci"
 import img from "../../assets/myPix.png"
 import Profilepost from "./Profilepost"
+import {useState} from "react"
+import Profilesaved from "./Profilesaved"
 
 
 const Profiepage = () => {
+  const [show, setShow] = useState(true)
+  const [showsaved, setShowsaved] = useState(false)
+
+  const Toggle = () => {
+    setShow(!show)
+    setShowsaved(false)
+  }
+
+  const Toggle2 = () => {
+    setShowsaved(true)
+    setShow(false)
+  }
+
+
   return (
       <div className="flex w-[100%]">
       <LeftSidebar />
@@ -54,11 +70,16 @@ const Profiepage = () => {
           <div className="flex w-[100%] column justify-center items-center mt-[40px]">
             <div className="border-t border-[#DBDBDB] w-[90%] items-center justify-center column">
               <div className="flex mt-[25px] w-[100%] justify-center">
-                <h4 className="text-[14px] mr-[40px]">POSTS</h4>
-                <h4 className="text-[14px] mr-[40px]">SAVED</h4>
-                <h4 className="text-[14px] mr-[40px]">TAGGED</h4>
+                <h4 onClick={Toggle} className="text-[14px] mr-[40px] cursor-pointer">POSTS</h4>
+                <h4 onClick={Toggle2} className="text-[14px] mr-[40px] cursor-pointer">SAVED</h4>
+                <h4 className="text-[14px] mr-[40px] cursor-pointer">TAGGED</h4>
               </div>
+              {show ? (
                 <Profilepost />
+              ) : null}
+              {showsaved ? (
+                <Profilesaved />
+              ) : null}
             </div>
           </div>
       </main>
