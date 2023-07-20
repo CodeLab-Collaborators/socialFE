@@ -1,5 +1,6 @@
 import LeftSidebar from "../../components/static/LeftSidebar"
 import {CiSettings} from "react-icons/ci"
+import img from "../../assets/myPix.png"
 
 
 const Profiepage = () => {
@@ -12,9 +13,9 @@ const Profiepage = () => {
         <main className="bg-white h-[100%] flex column justify-center pt-[40px]" style={{ width: "calc(100% - 18%)" }}>
           <div className="flex">
             <img
-            src="https://via.placeholder.com/150"
+            src={img}
             alt="Profile"
-            className="w-[160px] h-[160px] rounded-full mr-4"
+            className="w-[160px] h-[160px] rounded-full mr-4 object-cover"
             />
             
             <div className=" ml-[20px]">
@@ -44,7 +45,7 @@ const Profiepage = () => {
               </div>
               <div>
                 <h2 className="font-bold">Bio</h2>
-                <p className="w-[250px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="w-[250px] text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
           </div>
