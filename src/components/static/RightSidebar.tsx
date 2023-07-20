@@ -2,7 +2,7 @@
 
 const RightSidebar = () => {
   return (
-    <div>RightSidebar</div>
+    <div >RightSidebar</div>
   )
 }
 
