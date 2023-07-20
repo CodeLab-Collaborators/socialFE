@@ -2,7 +2,10 @@
 
 const RightSidebar = () => {
   return (
-    <div>RightSidebar</div>
+
+    <div className="w-[30%] h-[100vh] bg-[green] static">
+      RightSidebar
+    </div>
   )
 }
 
