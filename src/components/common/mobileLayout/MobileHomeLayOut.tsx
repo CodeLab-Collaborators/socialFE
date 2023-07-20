@@ -1,12 +1,12 @@
-import { Outlet } from "react-router-dom";
 import { MobileFooter, MobileHeader } from "../../statics";
 import { DisplayOver } from "..";
+import { MobileHomeStart } from "../../../pages";
 
 const MobileHomeLayOut = () => {
   return (
     <div className="w-screen bg-white relative min-h-screen">
       <MobileHeader />
-      <Outlet />
+      <MobileHomeStart />
       <MobileFooter />
       <DisplayOver />
     </div>
