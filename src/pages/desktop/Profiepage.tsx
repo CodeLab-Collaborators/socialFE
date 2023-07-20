@@ -4,19 +4,29 @@ import img from "../../assets/myPix.png"
 import Profilepost from "./Profilepost"
 import {useState} from "react"
 import Profilesaved from "./Profilesaved"
+import Profiletagged from "./Profiletagged"
 
 
 const Profiepage = () => {
   const [show, setShow] = useState(true)
   const [showsaved, setShowsaved] = useState(false)
+  const [showtagged, setShowtagged] = useState(false)
 
   const Toggle = () => {
     setShow(!show)
     setShowsaved(false)
+    setShowtagged(false)
   }
 
   const Toggle2 = () => {
     setShowsaved(true)
+    setShow(false)
+    setShowtagged(false)
+  }
+
+  const Toggle3 = () => {
+    setShowtagged(true)
+    setShowsaved(false)
     setShow(false)
   }
 
@@ -72,13 +82,16 @@ const Profiepage = () => {
               <div className="flex mt-[25px] w-[100%] justify-center">
                 <h4 onClick={Toggle} className="text-[14px] mr-[40px] cursor-pointer">POSTS</h4>
                 <h4 onClick={Toggle2} className="text-[14px] mr-[40px] cursor-pointer">SAVED</h4>
-                <h4 className="text-[14px] mr-[40px] cursor-pointer">TAGGED</h4>
+                <h4 onClick={Toggle3} className="text-[14px] mr-[40px] cursor-pointer">TAGGED</h4>
               </div>
               {show ? (
                 <Profilepost />
               ) : null}
               {showsaved ? (
                 <Profilesaved />
+              ) : null}
+              {showtagged ? (
+                <Profiletagged />
               ) : null}
             </div>
           </div>
