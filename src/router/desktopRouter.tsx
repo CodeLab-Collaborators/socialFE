@@ -11,12 +11,16 @@ import NotificationPage from "../pages/desktop/NotificationPage"
 
 export const desktopRouter = createBrowserRouter([
     {
-        path: "/",
+        path: "/signin",
         element: <SignInScreen />
     },
     {
         path: "register",
         element: <RegisterScreen />
+    },
+    {
+        path: "/account-update",
+        element: <Settingsprofile />
     },
     {
         path: "/",

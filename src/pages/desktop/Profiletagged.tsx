@@ -4,30 +4,30 @@ import img3 from "../../assets/ave.jpg"
 
 const Profiletagged = () => {
   return (
-      <div className="w-[100%] h-[100%] flex flex-wrap mt-[12px] justify-between">
+      <div className="w-[100%] h-[100%] flex flex-wrap mt-[12px]">
           <img
               src={img}
-              className="w-[325px] h-[330px] object-cover pb-[10px]"
+              className="w-[325px] h-[330px] object-cover m-[3px]"
           />
           <img
               src={img2}
-              className="w-[325px] h-[330px] object-cover pb-[10px]"
+              className="w-[325px] h-[330px] object-cover m-[3px]"
           />
           <img
               src={img3}
-              className="w-[325px] h-[330px] object-cover pb-[10px]"
+              className="w-[325px] h-[330px] object-cover m-[3px]"
           />
           <img
               src={img}
-              className="w-[325px] h-[330px] object-cover pb-[10px]"
+              className="w-[325px] h-[330px] object-cover m-[3px]"
           />
           <img
               src={img2}
-              className="w-[325px] h-[330px] object-cover pb-[10px]"
+              className="w-[325px] h-[330px] object-cover m-[3px]"
           />
           <img
               src={img3}
-              className="w-[325px] h-[330px] object-cover pb-[10px]"
+              className="w-[325px] h-[330px] object-cover m-[3px]"
           />
     </div>
   )
