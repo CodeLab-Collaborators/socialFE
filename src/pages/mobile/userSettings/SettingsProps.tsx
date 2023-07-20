@@ -1,18 +1,23 @@
-import { VscAccount } from "react-icons/vsc";
+import React from "react";
 
-const SettingsProps = () => {
+interface SettingsProp {
+  settingsIcon: any;
+  settingsTittle: string;
+  settingsDetails: string;
+}
+
+const SettingsProps: React.FC<SettingsProp> = ({
+  settingsIcon,
+  settingsDetails,
+  settingsTittle,
+}) => {
   return (
     <div>
       <div className="flex w-full bg-orange-500 items-center justify-between py-3 text-white mt-5">
-        <div className="w-[10%] text-3xl">
-          <VscAccount />
-        </div>
+        <div className="w-[10%] text-3xl">{settingsIcon}</div>
         <div className="w-[80%]">
-          <h3 className="font-bold">Your account</h3>
-          <p className="text-sm">
-            See information about your account, download an archive of your data
-            or learn about your account deactivation options
-          </p>
+          <h3 className="font-bold">{settingsTittle}</h3>
+          <p className="text-sm">{settingsDetails}</p>
         </div>
       </div>
     </div>
