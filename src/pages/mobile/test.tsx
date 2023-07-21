@@ -20,16 +20,24 @@ const Test = () => {
       <div className="border-b-[1px] border-b-slate-300 py-3 pl-4">Logo</div>
       <HomePage />
       <Navs />
+      <div className="w-fit h-fit mr-5 mb-16 absolute right-0 bottom-0">
+        <div
+          onClick={active}
+          style={{ display: show ? "none" : "flex" }}
+          className="rounded-full text-white p-[15px] bg-red-400">
+          <Icons sizeInPexels="20px" icon={<AiOutlinePlus />} />
+        </div>
+      </div>
       <div
         style={{
           width: "100vw",
           height: "100vh",
           position: "absolute",
-          display: "flex",
+          display: show ? "flex" : "none",
           justifyContent: "flex-end",
           alignItems: "flex-end",
           bottom: "0",
-          backgroundColor: show ? "#000000c5" : "",
+          backgroundColor: "#000000c5",
         }}>
         {show ? (
           <div className="w-fit h-fit flex flex-col gap-2 items-center mr-5 mb-16">
@@ -52,15 +60,7 @@ const Test = () => {
               </div>
             </div>
           </div>
-        ) : (
-          <div className="w-fit h-fit mr-5 mb-16">
-            <div
-              onClick={active}
-              className="rounded-full text-white p-[15px] bg-red-400">
-              <Icons sizeInPexels="20px" icon={<AiOutlinePlus />} />
-            </div>
-          </div>
-        )}
+        ) : null}
       </div>
     </div>
   );
