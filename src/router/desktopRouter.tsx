@@ -18,10 +18,7 @@ export const desktopRouter = createBrowserRouter([
         path: "register",
         element: <RegisterScreen />
     },
-    {
-        path: "/account-update",
-        element: <Settingsprofile />
-    },
+
     {
         path: "/",
         element: <DesktopLayOut />,
@@ -43,11 +40,26 @@ export const desktopRouter = createBrowserRouter([
 
     },
     {
-     path: "profile_page",
-    element: <Profiepage />,
+        path: "/profile-page",
+        children: [
+
+            {
+                index: true,
+                element: <Profiepage />
+            },
+            {
+                path: "account-update",
+                element: <Settingsprofile />
+            },
+        ]
     },
-      {
-          path:"/notifications",
+
+    {
+        path: "notifications",
             element:<NotificationPage/>
-            }
+    },
+    // {
+    //     path: "account-update",
+    //     element: <Settingsprofile />
+    // },
 ])
