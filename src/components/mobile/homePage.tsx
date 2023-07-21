@@ -8,7 +8,7 @@ import Icons from "./reusables/icons";
 import { TfiComment } from "react-icons/tfi";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { HiOutlineEye } from "react-icons/hi";
-import { PiShareNetworkLight } from "react-icons/pi";
+import { PiShareFatThin } from "react-icons/pi";
 
 const HomePage = () => {
   return (
@@ -50,7 +50,7 @@ const HomePage = () => {
                 <Icons sizeInPexels="13px" icon={<HiOutlineEye />} />
                 <div className="text-[11px]">255</div>
               </div>
-              <Icons sizeInPexels="13px" icon={<PiShareNetworkLight />} />
+              <Icons sizeInPexels="15px" icon={<PiShareFatThin />} />
             </div>
           </div>
         </div>
