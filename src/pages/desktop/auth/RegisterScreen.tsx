@@ -36,10 +36,11 @@ const RegisterScreen = () => {
         console.log(data)
         console.log("Pushing")
         await createAccount({ fullName, userName, email, password }).then(async (res: any) => {
+
             await Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: `${res?.data.message}`,
+                title: `${res?.data?.message}`,
                 showConfirmButton: false,
                 timer: 2500
             }).then(() => {

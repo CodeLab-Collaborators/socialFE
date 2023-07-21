@@ -47,10 +47,10 @@ const Profiepage = () => {
             />
             
             <div className=" ml-[20px]">
-              <div className="flex">
+              <div className="flex items-center">
                 <h1 className="text-2xl font-bold">John Doe</h1>
                 <NavLink to="account-update">
-                  <button className="w-[100px] h-[30px] bg-[#252525] text-white rounded-md ml-[40px]">
+                  <button className="w-[100px] h-[40px] bg-[#252525] text-white rounded ml-[40px] px-3  text-sm ">
                   Edit profile
                 </button>
                   </NavLink>
