@@ -34,7 +34,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 2500,
         }).then(() => {
-          navigate("/");
+          navigate("/verify");
         });
       }
     );
