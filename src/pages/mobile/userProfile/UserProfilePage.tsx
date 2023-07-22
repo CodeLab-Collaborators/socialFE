@@ -81,7 +81,9 @@ const UserProfilePage = () => {
             </div>
           </div>
           <div className="flex font-semibold w-full justify-between items-center mt-3 mb-1">
-            <Link style={{ width: "30%", height: "100%" }} to="/user-update">
+            <Link
+              style={{ width: "30%", height: "100%" }}
+              to="/profile-page/account-update">
               <div className="w-full h-[50px] rounded-xl bg-gray-300 flex items-center justify-center">
                 Edit Profile
               </div>

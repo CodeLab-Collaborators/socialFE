@@ -19,7 +19,7 @@ const HomePage = () => {
             <ProfilePhotos sizeInPexels="30px" photo={avatar} />
           </div>
           <div className="text-[11px] flex-1">
-            <Link to="/page/post">
+            <Link to="/single-post">
               <div className="flex w-full text-gray-700 items-center gap-1">
                 <Name name="Tony Stark" color="goldenrod" />
                 @tonystark

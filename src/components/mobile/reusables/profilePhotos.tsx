@@ -7,7 +7,7 @@ type iProfile = {
 
 const ProfilePhotos: React.FC<iProfile> = ({ photo, sizeInPexels }) => {
   return (
-    <Link to="/user-profile">
+    <Link to="/profile-page">
       <div className="h-fit w-fit">
         <img
           src={photo}

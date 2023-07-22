@@ -36,7 +36,7 @@ const Search = () => {
               <div className="flex flex-col items-center">
                 <Name name="Robert Downey Junior" color="#0b6dcf" />
                 <div className="text-[10px] text-[#9a9a9a]">
-                  <Link to="/user-profile">@robertdowneyjunior</Link>
+                  <Link to="/profile-page">@robertdowneyjunior</Link>
                 </div>
               </div>
             </div>

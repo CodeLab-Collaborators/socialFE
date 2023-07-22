@@ -7,7 +7,7 @@ type iName = {
 
 const Name: React.FC<iName> = ({ name, color }) => {
   return (
-    <Link to="/user-profile">
+    <Link to="/profile-page">
       <div className="flex text-[11px] font-semibold gap-1 items-center">
         <div>{name}</div>
         <div className="text-[9px]" style={{ color: color }}>
