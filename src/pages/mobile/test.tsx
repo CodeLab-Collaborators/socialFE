@@ -6,6 +6,7 @@ import { SlCloudUpload } from "react-icons/sl";
 import { AiOutlinePlus } from "react-icons/ai";
 import { CiImageOn } from "react-icons/ci";
 import { PiVideoThin } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Test = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -16,7 +17,7 @@ const Test = () => {
     setShow(false);
   };
   return (
-    <div onMouseDown={inActive} className="w-screen min-h-screen bg-white">
+    <div className="w-screen min-h-screen bg-white">
       <div className="border-b-[1px] border-b-slate-300 py-3 pl-4">Logo</div>
       <HomePage />
       <Navs />
@@ -29,6 +30,7 @@ const Test = () => {
         </div>
       </div>
       <div
+        onClick={inActive}
         style={{
           width: "100vw",
           height: "100vh",
@@ -53,12 +55,16 @@ const Test = () => {
                 <Icons sizeInPexels="24px" icon={<CiImageOn />} />
               </div>
             </div>
-            <div className="flex text-white items-center gap-3">
-              <div>Post</div>
-              <div className="rounded-full text-white p-[15px] bg-red-400">
-                <Icons sizeInPexels="24px" icon={<SlCloudUpload />} />
+            <Link to="/new-yan">
+              <div
+                onClick={inActive}
+                className="flex text-white items-center gap-3">
+                <div>Post</div>
+                <div className="rounded-full text-white p-[15px] bg-red-400">
+                  <Icons sizeInPexels="24px" icon={<SlCloudUpload />} />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ) : null}
       </div>
