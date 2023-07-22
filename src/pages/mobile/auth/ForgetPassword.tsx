@@ -60,7 +60,7 @@ const ForgetPassword = () => {
         {/* back to login */}
 
         <div className=" border-b bottom-0 w-full py-3 mb-10 text-center text-[12px] font-semibold bg-[#FAFAFA] ">
-          Back to login
+          <Link to="/">Back to login</Link>
         </div>
       </div>
     </div>

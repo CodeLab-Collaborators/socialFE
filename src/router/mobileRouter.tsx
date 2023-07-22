@@ -9,6 +9,7 @@ import ForgetPassword from "../pages/mobile/auth/ForgetPassword";
 import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
+import CreatePost from "../pages/mobile/pages/post/CreatePost";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -52,5 +53,9 @@ export const mobileRouter = createBrowserRouter([
   {
     path: "/search/people",
     element: <Search />,
+  },
+  {
+    path: "/new-yan",
+    element: <CreatePost />,
   },
 ]);
