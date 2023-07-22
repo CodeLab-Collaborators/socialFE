@@ -10,6 +10,7 @@ import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
+import Verify from "../pages/mobile/auth/Verify";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const mobileRouter = createBrowserRouter([
       {
         path: "password-reset",
         element: <ForgetPassword />,
+      },
+      {
+        path: "verify",
+        element: <Verify />,
       },
     ],
   },
