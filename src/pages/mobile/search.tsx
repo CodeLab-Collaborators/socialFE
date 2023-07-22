@@ -21,7 +21,7 @@ const Search = () => {
         <input
           autoFocus
           placeholder="Search Yet"
-          className="placeholder:font-light bg-transparent ml-10 focus:outline-none placeholder:text-sm text-blue-400"
+          className="placeholder:font-light bg-transparent ml-10 focus:outline-none text-[13px] placeholder:text-sm text-blue-400"
         />
       </div>
       <div className="w-full py-9 flex justify-center">
