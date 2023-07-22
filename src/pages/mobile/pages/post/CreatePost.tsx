@@ -12,20 +12,20 @@ import pic from "../../../../assets/myPix.png";
 const CreatePost = () => {
   const navigate = useNavigate();
   const [images, setImages] = useState<string[]>([]);
-  const [yan, setYan] = useState<string>("");
+  //   const [yan, setYan] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // for the tweet
-  const handleTweetTextChange = (event: any) => {
-    setYan(event.target.value);
-  };
+  //   const handleTweetTextChange = (event: any) => {
+  //     setYan(event.target.value);
+  //   };
 
-  const handleTweetSubmit = () => {
-    // Handle the tweet submission here (e.g., send the tweet to the server).
-    // You can access the tweet content via the `tweetText` state.
-    console.log("Tweet:", yan);
-    setYan(""); // Clear the text area after submitting.
-  };
+  //   const handleTweetSubmit = () => {
+  //     // Handle the tweet submission here (e.g., send the tweet to the server).
+  //     // You can access the tweet content via the `tweetText` state.
+  //     console.log("Tweet:", yan);
+  //     setYan(""); // Clear the text area after submitting.
+  //   };
 
   //
 
@@ -68,6 +68,9 @@ const CreatePost = () => {
       fileInputRef.current.click();
     }
   };
+
+  // doing nothing delete later
+  handleButtonClick;
 
   return (
     <div className="w-full h-screen flex flex-col justify-between">
