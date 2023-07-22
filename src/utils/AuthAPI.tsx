@@ -2,7 +2,7 @@ import axios from "axios";
 import { iData } from "../pages/desktop/auth/RegisterScreen";
 import { CreateUserParams } from "./types";
 
-const URL = "https://social-connect-797u.onrender.com/api/social/auth";
+export const URL = "https://social-connect-797u.onrender.com/api/social/auth";
 const URL2 = "https://localhost:5544/api/with-google/google-auth";
 
 export const createAccount = async (data: iData) => {
@@ -26,7 +26,8 @@ export const createAccountMobile = async (data: CreateUserParams) => {
     return await axios
       .post(`${URL}/create`, data)
       .then((res) => {
-        return res;
+        // return res;
+        console.log(`this is res`, res);
       })
       .catch((err) => {
         console.log(err);

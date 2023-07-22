@@ -8,6 +8,7 @@ import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
 import UserSettingsPage from "../pages/mobile/userSettings/UserSettingsPage";
 import UserUpdatePage from "../pages/mobile/userUpdate/UserUpdatePage";
 import ForgetPassword from "../pages/mobile/auth/ForgetPassword";
+import CreatePost from "../pages/mobile/pages/post/CreatePost";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -58,5 +59,9 @@ export const mobileRouter = createBrowserRouter([
   {
     path: "/post",
     element: <SinglePost />,
+  },
+  {
+    path: "/new-yan",
+    element: <CreatePost />,
   },
 ]);
