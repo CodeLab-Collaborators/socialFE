@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Icons from "../../components/mobile/reusables/icons";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdCancel } from "react-icons/md";
@@ -36,7 +36,7 @@ const Search = () => {
               <div className="flex flex-col items-center">
                 <Name name="Robert Downey Junior" color="#0b6dcf" />
                 <div className="text-[10px] text-[#9a9a9a]">
-                  @robertdowneyjunior
+                  <Link to="/user-profile">@robertdowneyjunior</Link>
                 </div>
               </div>
             </div>
