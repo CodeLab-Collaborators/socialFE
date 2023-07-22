@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import Globalbutton from "../../../reusables/globalbutton";
-import Input from "../../../reusables/input";
+
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { createAccountMobile } from "../../../utils/AuthAPI";
+import { createAccount } from "../../../utils/AuthAPI";
 import Swal from "sweetalert2";
 import { CreateUserParams } from "../../../utils/types";
 
@@ -12,24 +12,20 @@ const Register = () => {
   const navigate = useNavigate();
   const authSchema = yup.object({
     email: yup.string().required(),
-    name: yup.string().required(),
-    username: yup.string().required(),
+    fullName: yup.string().required(),
+    userName: yup.string().required(),
     password: yup.string().required(),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     resolver: yupResolver(authSchema),
   });
 
   const onSubmit = handleSubmit(async (data: CreateUserParams) => {
-    const { name, username, email, password } = data;
-    console.log(data);
+    const { fullName, userName, email, password } = data;
+
     console.log("Pushing");
-    await createAccountMobile({ username, email, password, name }).then(
+    await createAccount({ fullName, userName, email, password }).then(
       async (res: any) => {
         await Swal.fire({
           position: "center",
@@ -38,11 +34,10 @@ const Register = () => {
           showConfirmButton: false,
           timer: 2500,
         }).then(() => {
-          navigate("/user-profile");
+          navigate("/");
         });
       }
     );
-    // reset()
   });
 
   return (
@@ -52,7 +47,6 @@ const Register = () => {
         {/* Logo */}
         <div className="h-[15%]  grid place-items-center  font-black text-3xl">
           <Link to="/">
-            {" "}
             <p className="tracking-tighter text-orange-500"> AJconnect</p>
           </Link>
 
@@ -79,53 +73,61 @@ const Register = () => {
         </div>
 
         {/* form */}
-        <form className="flex flex-col mb-4">
-          <Input
-            placeholder="Full Name"
-            inputType="text"
-            characterLength={18}
-            onchange={() => {}}
-            labelName="Full Name"
-            {...register("name")}
-          />
-          <Input
-            placeholder="Email"
-            inputType="email"
-            characterLength={22}
-            onchange={() => {}}
-            labelName="email"
-            {...register("email")}
-          />
+        <form className="flex  items-center flex-col mb-4">
+          <div className="relative mb-2 bg-[#f5f5f5] w-full text-[10px]">
+            <input
+              type="text"
+              className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+              placeholder="Full name"
+              {...register("fullName")}
+              maxLength={22}
+              required
+            />
+            <label className="pointer-events-none absolute left-0 top-[-4px] origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85]  peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200">
+              Full name
+            </label>
+          </div>
 
-          <Input
-            placeholder="username"
-            inputType="text"
-            characterLength={30}
-            onchange={() => {}}
-            labelName="username"
-            {...register("username")}
-          />
+          <div className="relative mb-2 bg-[#f5f5f5] w-full text-[10px]">
+            <input
+              type="email"
+              className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+              placeholder="Email"
+              {...register("email")}
+              maxLength={22}
+              required={true}
+            />
+            <label className="pointer-events-none absolute left-0 top-[-4px] origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85]  peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200">
+              Email
+            </label>
+          </div>
 
-          <Input
-            {...register("password")}
-            placeholder="password"
-            inputType="password"
-            characterLength={20}
-            onchange={() => {}}
-            labelName="Password"
-          />
-          <p className="text-xs text-red-500">
-            {errors?.email && errors?.email?.message}
-          </p>
-          <p className="text-xs text-red-500">
-            {errors?.username && errors?.username?.message}
-          </p>
-          <p className="text-xs text-red-500">
-            {errors?.password && errors?.password?.message}
-          </p>
-          <p className="text-xs text-red-500">
-            {errors?.name && errors?.name?.message}
-          </p>
+          <div className="relative mb-2 bg-[#f5f5f5] w-full text-[10px]">
+            <input
+              type="text"
+              className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+              placeholder="Username"
+              maxLength={22}
+              required={true}
+              {...register("userName")}
+            />
+            <label className="pointer-events-none absolute left-0 top-[-4px] origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85]  peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200">
+              Username
+            </label>
+          </div>
+          <div className="relative mb-2 bg-[#f5f5f5] w-full text-[10px]">
+            <input
+              type="password"
+              className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+              placeholder="Password"
+              maxLength={22}
+              aria-required={true}
+              {...register("password")}
+            />
+            <label className="pointer-events-none absolute left-0 top-[-4px] origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85]  peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200">
+              Password
+            </label>
+          </div>
 
           {/* t and c */}
           <div className="my-5 text-xs text-center text-slate-400">
@@ -143,7 +145,7 @@ const Register = () => {
             onclick={() => {
               onSubmit()
                 .then(() => {
-                  // console.log("resolve");
+                  console.log("resolve");
                 })
                 .catch((err) => {
                   console.log(err);
