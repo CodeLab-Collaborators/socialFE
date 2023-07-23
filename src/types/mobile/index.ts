@@ -70,3 +70,9 @@ export type iComment = {
   replies: string;
   views: string;
 };
+
+export type imageProp = {
+  image: string;
+  alt: string;
+  onCancel: () => void;
+};
