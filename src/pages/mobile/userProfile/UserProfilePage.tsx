@@ -5,6 +5,7 @@ import { CiFacebook } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FiPlusSquare } from "react-icons/fi";
 import { TbBrandAirbnb } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const UserProfilePage = () => {
   return (
@@ -80,9 +81,13 @@ const UserProfilePage = () => {
             </div>
           </div>
           <div className="flex font-semibold w-full justify-between items-center mt-3 mb-1">
-            <div className="w-[30%] h-[50px] rounded-xl bg-gray-300 flex items-center justify-center">
-              Edit Profile
-            </div>
+            <Link
+              style={{ width: "30%", height: "100%" }}
+              to="/profile-page/account-update">
+              <div className="w-full h-[50px] rounded-xl bg-gray-300 flex items-center justify-center">
+                Edit Profile
+              </div>
+            </Link>
             <div className="w-[30%] h-[50px] rounded-xl bg-gray-300 flex items-center justify-center">
               Share Profile
             </div>
