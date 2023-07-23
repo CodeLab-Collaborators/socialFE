@@ -77,7 +77,7 @@ export const mobileRouter = createBrowserRouter([
     element: <Search />,
   },
   {
-    path: "/new-post",
+    path: "/new-yan",
     element: <CreatePost />,
   },
 ]);
