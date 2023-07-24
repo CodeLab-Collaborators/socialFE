@@ -9,13 +9,13 @@ export type inputData = {
 export type buttonData = {
   title: string;
   buttonType: "button" | "submit" | "reset";
-  onclick?: React.MouseEventHandler<HTMLButtonElement>;
+  onclick?: () => void;
   width: string;
 };
 
 export type CreateUserParams = {
-  name: string;
+  fullName: string;
   email: string;
-  username: string;
+  userName: string;
   password: string;
 };

@@ -1,6 +1,7 @@
 import LeftSidebar from "../../components/static/LeftSidebar"
 import Accountcenter from "./Accountcenter"
-import Accounteditcenter from "./auth/Accounteditcenter"
+import Accounteditcenter from "./Accounteditcenter"
+import Edit_profile from "./Edit_profile"
 
 
 const Settingsprofile = () => {
@@ -19,6 +20,10 @@ const Settingsprofile = () => {
                           <div className="w-[25%] column border-[#DBDBDB] border-r p-[18px]">
                               <Accountcenter />
                               <Accounteditcenter />
+                          </div>
+
+                          <div className="w-[75%] h-[100%] pt-[20px] pl-[40px]">
+                              <Edit_profile />
                           </div>
                       </div>
                   </div>

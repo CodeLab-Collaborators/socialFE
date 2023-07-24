@@ -1,4 +1,3 @@
-import Sign_in from "./auth/Sign_in";
 
 const MobileStart = () => {
   return (
@@ -9,7 +8,7 @@ const MobileStart = () => {
         <div className="h-[15%] mb-8 grid place-items-center  font-black text-3xl tracking-tighter text-orange-500">
           AJconnect
         </div>
-        <Sign_in />
+        Home
       </div>
     </div>
   );

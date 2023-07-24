@@ -9,6 +9,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { signIncreateAccount, verifyAccount } from "../../../utils/AuthAPI"
 import Swal from "sweetalert2"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import { signUserGlobal } from "../../../global/globalState"
+import { useDispatch } from "react-redux"
 
 export interface iData {
     email?: string;
@@ -21,6 +23,8 @@ export interface iData {
 const SignInTabScreen = () => {
     const { id, token } = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     const authSchema = yup.object({
 
         email: yup.string().required(),
@@ -35,8 +39,6 @@ const SignInTabScreen = () => {
         const { email, password } = data
 
         await signIncreateAccount({ email, password }).then(async (res: any) => {
-            console.log("Reading: ", res.data.data)
-
 
             await Swal.fire({
                 position: 'center',
@@ -45,6 +47,7 @@ const SignInTabScreen = () => {
                 showConfirmButton: false,
                 timer: 2500
             }).then(() => {
+                dispatch(signUserGlobal(res.data.data))
                 navigate("/home")
             })
         }).catch(async (err) => {
@@ -59,8 +62,6 @@ const SignInTabScreen = () => {
                 })
             }
         })
-
-
 
         // reset()
     })

@@ -70,3 +70,15 @@ export type iComment = {
   replies: string;
   views: string;
 };
+
+export type imageProp = {
+  image: string;
+  alt: string;
+  onCancel: () => void;
+};
+
+export type imgData = {
+  setImages: React.Dispatch<React.SetStateAction<string[]>>;
+  icon: any;
+  css: string;
+};

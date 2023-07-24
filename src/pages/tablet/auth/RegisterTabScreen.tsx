@@ -13,7 +13,6 @@ import { Link, useNavigate } from "react-router-dom"
 export interface iData {
     email?: string;
     password?: string;
-    fullName?: string;
     userName?: string;
     confirm?: string;
 }
@@ -23,6 +22,7 @@ const RegisterTabScreen = () => {
     const navigate = useNavigate()
     const authSchema = yup.object({
         email: yup.string().required(),
+        userName: yup.string().required(),
         password: yup.string().required(),
         confirm: yup.string().oneOf([yup.ref("password")])
     })
@@ -32,10 +32,9 @@ const RegisterTabScreen = () => {
     })
 
     const onSubmit = handleSubmit(async (data: iData) => {
-        const { fullName, userName, email, password } = data
-        console.log(data)
-        console.log("Pushing")
-        await createAccount({ fullName, userName, email, password }).then(async (res: any) => {
+        const { userName, email, password } = data
+
+        await createAccount({ userName, email, password }).then(async (res: any) => {
             await Swal.fire({
                 position: 'center',
                 icon: 'success',
