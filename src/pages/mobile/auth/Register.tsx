@@ -24,7 +24,7 @@ const Register = () => {
   const onSubmit = handleSubmit(async (data: CreateUserParams) => {
     const { fullName, userName, email, password } = data;
 
-    console.log("Pushing");
+    // console.log("Pushing");
     await createAccount({ fullName, userName, email, password }).then(
       async (res: any) => {
         await Swal.fire({
