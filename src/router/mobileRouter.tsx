@@ -72,7 +72,7 @@ export const mobileRouter = createBrowserRouter([
     element: <Test />,
   },
   {
-    path: "/single-post",
+    path: "/single-post/:id",
     element: <ViewPosts />,
   },
   {

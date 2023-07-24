@@ -34,7 +34,6 @@ export const desktopRouter = createBrowserRouter([
     path: "register",
     element: <RegisterScreen />,
   },
-
   {
     path: "/",
     element: <DesktopLayOut />,

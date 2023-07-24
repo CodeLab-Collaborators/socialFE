@@ -12,6 +12,7 @@ import { store } from "./global/store";
 
 let persistor = persistStore(store)
 
+// import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (

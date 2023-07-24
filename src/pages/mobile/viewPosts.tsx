@@ -1,18 +1,22 @@
 import { FiArrowLeft } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProfilePhotos from "../../components/mobile/reusables/profilePhotos";
 import { SlOptions } from "react-icons/sl";
 import ave from "../../assets/tony.jpg";
 import Name from "../../components/mobile/reusables/name";
-import cover from "../../assets/ave.jpg";
 import Icons from "../../components/mobile/reusables/icons";
 import { PiChatCircleLight } from "react-icons/pi";
 import { LiaRetweetSolid } from "react-icons/lia";
 import { BsDot } from "react-icons/bs";
 import { PiShareFatThin } from "react-icons/pi";
+import { dummyPosts } from "./dummy/data/posts";
+import ImageComponent from "../../components/mobile/image";
+import Comments from "../../components/mobile/comments";
 
 const ViewPosts = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const data = dummyPosts.find((el) => el.id === id);
   return (
     <div className="w-full pb-12 min-h-screen bg-white">
       <div className="pl-5 flex items-center py-4 bg-white gap-5">
@@ -28,25 +32,25 @@ const ViewPosts = () => {
         <div className="w-[88%]">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <ProfilePhotos sizeInPexels="30px" photo={ave} />
-              <Name color="#066fd8" name="Robert Downey Junior" />
+              <ProfilePhotos
+                sizeInPexels="30px"
+                photo={data?.user.profilePicture}
+              />
+              <Name color="#066fd8" name={data?.user.name!} />
             </div>
             <div className="text-xs flex items-center gap-5">
-              <div className="text-[grey]">12h</div>
+              <div className="text-[grey]">{data?.time}</div>
               <SlOptions />
             </div>
           </div>
-          <div className="text-[11px] font-normal mt-3">
-            {`Lionel Messi was unveiled by Inter Miami to a sold-out crowd of around 20,000 fans 🏁🦄.... His former teammate Sergio Busquets was also unveiled, after signing a contract for the club until 2025 ✍😍`}
-          </div>
+          <div className="text-[11px] font-normal mt-3">{data?.message}</div>
         </div>
-        <div className="flex mt-3 gap-2 overflow-x-scroll no-scrollbar">
-          <img
-            src={cover}
-            className="w-screen h-[300px] md:hidden object-top"
-          />
+        <div className="flex mt-3 gap-[6px] overflow-x-scroll no-scrollbar">
+          {data?.pictures.map((el) => (
+            <ImageComponent image={el} />
+          ))}
         </div>
-        <div className="w-full py-5 border-b-[1px] border-b-slate-200 flex flex-col items-center">
+        <div className="w-full py-3 border-b-[1px] border-b-slate-200 flex flex-col items-center">
           <div className="w-[88%] flex flex-col gap-6">
             <div className="flex items-center gap-6">
               <label className="w-fit h-fit" htmlFor="comment">
@@ -56,43 +60,23 @@ const ViewPosts = () => {
               <Icons sizeInPexels="20px" icon={<PiShareFatThin />} />
             </div>
             <div className="text-[11px] text-gray-600 flex gap-1 items-center">
-              <div>67 replies</div>
+              <div>{data?.replies} replies</div>
               <BsDot />
-              <div>1,040 views</div>
+              <div>{data?.views} views</div>
             </div>
           </div>
         </div>
-        <div className="w-full py-5 border-b-[1px] border-b-slate-200 flex flex-col items-center">
-          <div className="w-[88%] flex gap-4">
-            <ProfilePhotos sizeInPexels="26px" photo={ave} />
-            <div className="flex-1 flex flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <Name color="#066fd8" name="Robert Downey Junior" />
-                <div className="text-xs flex items-center gap-5">
-                  <div className="text-[grey]">12h</div>
-                  <SlOptions />
-                </div>
-              </div>
-              <div className="text-[11px] font-normal mt-3">
-                {`Will the GOAT turn fortunes around and gey Inter Miami off from bottom
-          of the MLS ? 🤔`}
-              </div>
-              <div className="w-[88%] flex flex-col gap-5">
-                <div className="flex items-center gap-6">
-                  <label className="w-fit h-fit" htmlFor="comment">
-                    <Icons sizeInPexels="20px" icon={<PiChatCircleLight />} />
-                  </label>
-                  <Icons sizeInPexels="20px" icon={<LiaRetweetSolid />} />
-                  <Icons sizeInPexels="20px" icon={<PiShareFatThin />} />
-                </div>
-                <div className="text-[11px] text-gray-600 flex gap-1 items-center">
-                  <div>67 replies</div>
-                  <BsDot />
-                  <div>1,040 views</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="w-full flex flex-col items-center">
+          {data?.comments!.map((el) => (
+            <Comments
+              profilePhoto={el.profilePicture}
+              name={el.name}
+              time={el.time}
+              comment={el.comment}
+              replies={`${el.replies}`}
+              views={`${el.views}`}
+            />
+          ))}
         </div>
       </div>
       <div className="fixed w-full bottom-0 py-[6px] flex justify-center items-center">
@@ -100,7 +84,7 @@ const ViewPosts = () => {
           <ProfilePhotos sizeInPexels="25px" photo={ave} />
           <input
             id="comment"
-            className="placeholder:text-[#8d8d8d] placeholder:text-xs text-xs bg-transparent focus:outline-none"
+            className="placeholder:text-[#8d8d8d] w-full pr-3 placeholder:text-xs text-xs bg-transparent focus:outline-none"
             placeholder="Reply to Pepper Potts"
           />
         </div>
