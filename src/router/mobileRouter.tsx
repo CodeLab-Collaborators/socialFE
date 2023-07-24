@@ -85,14 +85,7 @@ export const mobileRouter = createBrowserRouter([
   },
 
     ],
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/password-reset",
-    element: <ForgetPassword />,
-  },
+)
 
-]);
+
+
