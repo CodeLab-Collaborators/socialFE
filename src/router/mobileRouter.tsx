@@ -10,6 +10,24 @@ import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
+import Verify from "../pages/mobile/auth/Verify";
+
+//Please use these exact routes :
+// log in page : "/"
+// sign up page : "/register"
+// reset password page : "/password-reset"
+// verification code page : "/verify"
+// home page : "/home-page"
+// search page : "/search-page"
+// explore page : "/explore-page"
+// reels page : "/reels-page"
+// messages page : "/messages-page"
+// notifications page : "/notifications-page"
+// create post page : "/new-yan"
+// profile page : "/profile-page"
+// settings page : "/user-settings"
+// update profile page : "/profile-page/account-update"
+// view single post page : "/single-post"
 import PrivateRouter from "./PrivateRouter";
 
 export const mobileRouter = createBrowserRouter([
@@ -24,7 +42,21 @@ export const mobileRouter = createBrowserRouter([
         element: <UserProfilePage />,
       },
       {
-        path: "user-profile",
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "password-reset",
+        element: <ForgetPassword />,
+      },
+      {
+        path: "verify",
+        element: <Verify />,
+      },
+    ],
+  },
+  {
+    path: "/profile-page",
     element: <UserProfilePage />,
   },
   {
@@ -32,19 +64,19 @@ export const mobileRouter = createBrowserRouter([
     element: <UserSettingsPage />,
   },
   {
-    path: "user-update",
+    path: "/profile-page/account-update",
     element: <UserUpdatePage />,
   },
   {
-    path: "test",
+    path: "/home-page",
     element: <Test />,
   },
   {
-    path: "page/post",
+    path: "/single-post",
     element: <ViewPosts />,
   },
   {
-    path: "search/people",
+    path: "/search-page",
     element: <Search />,
   },
   {

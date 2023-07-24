@@ -8,8 +8,8 @@ import cover from "../../assets/ave.jpg";
 import Icons from "../../components/mobile/reusables/icons";
 import { PiChatCircleLight } from "react-icons/pi";
 import { LiaRetweetSolid } from "react-icons/lia";
-import { BsSend } from "react-icons/bs";
 import { BsDot } from "react-icons/bs";
+import { PiShareFatThin } from "react-icons/pi";
 
 const ViewPosts = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const ViewPosts = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <ProfilePhotos sizeInPexels="30px" photo={ave} />
-              <Name color="blue" name="Robert Downey Junior" />
+              <Name color="#066fd8" name="Robert Downey Junior" />
             </div>
             <div className="text-xs flex items-center gap-5">
               <div className="text-[grey]">12h</div>
@@ -49,9 +49,11 @@ const ViewPosts = () => {
         <div className="w-full py-5 border-b-[1px] border-b-slate-200 flex flex-col items-center">
           <div className="w-[88%] flex flex-col gap-6">
             <div className="flex items-center gap-6">
-              <Icons sizeInPexels="20px" icon={<PiChatCircleLight />} />
+              <label className="w-fit h-fit" htmlFor="comment">
+                <Icons sizeInPexels="20px" icon={<PiChatCircleLight />} />
+              </label>
               <Icons sizeInPexels="20px" icon={<LiaRetweetSolid />} />
-              <Icons sizeInPexels="20px" icon={<BsSend />} />
+              <Icons sizeInPexels="20px" icon={<PiShareFatThin />} />
             </div>
             <div className="text-[11px] text-gray-600 flex gap-1 items-center">
               <div>67 replies</div>
@@ -65,7 +67,7 @@ const ViewPosts = () => {
             <ProfilePhotos sizeInPexels="26px" photo={ave} />
             <div className="flex-1 flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <Name color="blue" name="Robert Downey Junior" />
+                <Name color="#066fd8" name="Robert Downey Junior" />
                 <div className="text-xs flex items-center gap-5">
                   <div className="text-[grey]">12h</div>
                   <SlOptions />
@@ -77,9 +79,11 @@ const ViewPosts = () => {
               </div>
               <div className="w-[88%] flex flex-col gap-5">
                 <div className="flex items-center gap-6">
-                  <Icons sizeInPexels="20px" icon={<PiChatCircleLight />} />
+                  <label className="w-fit h-fit" htmlFor="comment">
+                    <Icons sizeInPexels="20px" icon={<PiChatCircleLight />} />
+                  </label>
                   <Icons sizeInPexels="20px" icon={<LiaRetweetSolid />} />
-                  <Icons sizeInPexels="20px" icon={<BsSend />} />
+                  <Icons sizeInPexels="20px" icon={<PiShareFatThin />} />
                 </div>
                 <div className="text-[11px] text-gray-600 flex gap-1 items-center">
                   <div>67 replies</div>
@@ -95,6 +99,7 @@ const ViewPosts = () => {
         <div className="w-[92%] p-1 bg-slate-200 rounded-3xl flex gap-4">
           <ProfilePhotos sizeInPexels="25px" photo={ave} />
           <input
+            id="comment"
             className="placeholder:text-[#8d8d8d] placeholder:text-xs text-xs bg-transparent focus:outline-none"
             placeholder="Reply to Pepper Potts"
           />

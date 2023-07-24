@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type iProfile = {
   photo: any;
   sizeInPexels: string;
@@ -5,19 +7,21 @@ type iProfile = {
 
 const ProfilePhotos: React.FC<iProfile> = ({ photo, sizeInPexels }) => {
   return (
-    <div className="h-fit w-fit">
-      <img
-        src={photo}
-        alt="profile"
-        style={{
-          height: sizeInPexels,
-          width: sizeInPexels,
-          borderRadius: "50%",
-          objectFit: "cover",
-          objectPosition: "top",
-        }}
-      />
-    </div>
+    <Link to="/profile-page">
+      <div className="h-fit w-fit">
+        <img
+          src={photo}
+          alt="profile"
+          style={{
+            height: sizeInPexels,
+            width: sizeInPexels,
+            borderRadius: "50%",
+            objectFit: "cover",
+            objectPosition: "top",
+          }}
+        />
+      </div>
+    </Link>
   );
 };
 

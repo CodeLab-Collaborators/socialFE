@@ -1,14 +1,19 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { GrCheckmark } from "react-icons/gr";
 import { TbMoodBoy } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 const UserUpdatePage = () => {
+  const navigate = useNavigate();
+  const toPrevious = () => {
+    navigate(-1);
+  };
   return (
     <div className="w-[100%] py-5 flex items-center justify-center">
       <div className="w-[90%] h-[90%]">
         <div className="flex w-[100%] items-center justify-between">
           <div className="flex">
-            <div className="text-[25px]">
+            <div onClick={toPrevious} className="text-[25px]">
               <AiOutlineClose />
             </div>
             <h3 className="ml-[17px]">Edit profile</h3>

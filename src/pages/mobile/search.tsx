@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Icons from "../../components/mobile/reusables/icons";
 import { FiArrowLeft } from "react-icons/fi";
 import { MdCancel } from "react-icons/md";
@@ -21,7 +21,7 @@ const Search = () => {
         <input
           autoFocus
           placeholder="Search Yet"
-          className="placeholder:font-light bg-transparent ml-10 focus:outline-none placeholder:text-sm text-blue-400"
+          className="placeholder:font-light bg-transparent ml-10 focus:outline-none text-[13px] placeholder:text-sm text-blue-400"
         />
       </div>
       <div className="w-full py-9 flex justify-center">
@@ -36,7 +36,7 @@ const Search = () => {
               <div className="flex flex-col items-center">
                 <Name name="Robert Downey Junior" color="#0b6dcf" />
                 <div className="text-[10px] text-[#9a9a9a]">
-                  @robertdowneyjunior
+                  <Link to="/profile-page">@robertdowneyjunior</Link>
                 </div>
               </div>
             </div>
