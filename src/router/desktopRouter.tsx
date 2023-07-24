@@ -7,6 +7,7 @@ import SignInScreen from "../pages/desktop/auth/SignIn"
 import Profiepage from "../pages/desktop/Profiepage"
 import Settingsprofile from "../pages/desktop/Settingsprofile"
 import NotificationPage from "../pages/desktop/NotificationPage"
+import PrivateRouter from "./PrivateRouter"
 
 
 export const desktopRouter = createBrowserRouter([
@@ -18,24 +19,28 @@ export const desktopRouter = createBrowserRouter([
         path: "register",
         element: <RegisterScreen />
     },
+    {
+        path: "register-info",
+        element: <RegisterInfo />
+    },
+    {
+        path: "api/social/auth/:id/:token/verify",
+        element: <SignInScreen />
+    },
 
     {
         path: "/",
-        element: <DesktopLayOut />,
+        element:
+            <PrivateRouter> <DesktopLayOut /></PrivateRouter>
+        ,
         children: [
             {
                 index: true,
                 path: "home",
                 element: <DesktopStart />
             },
-            {
-                path: "register-info",
-                element: <RegisterInfo />
-            },
-            {
-                path: "api/social/auth/:id/:token/verify",
-                element: <SignInScreen />
-            },
+
+
         ]
 
     },

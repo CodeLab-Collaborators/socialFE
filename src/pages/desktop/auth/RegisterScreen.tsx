@@ -13,7 +13,6 @@ import { Link, useNavigate } from "react-router-dom"
 export interface iData {
     email?: string;
     password?: string;
-    fullName?: string;
     userName?: string;
     confirm?: string;
 }
@@ -22,6 +21,7 @@ const RegisterScreen = () => {
 
     const navigate = useNavigate()
     const authSchema = yup.object({
+        userName: yup.string().required(),
         email: yup.string().required(),
         password: yup.string().required(),
         confirm: yup.string().oneOf([yup.ref("password")])
@@ -31,24 +31,30 @@ const RegisterScreen = () => {
         resolver: yupResolver(authSchema)
     })
 
-    const onSubmit = handleSubmit(async (data: iData) => {
-        const { fullName, userName, email, password } = data
-        console.log(data)
-        console.log("Pushing")
-        await createAccount({ fullName, userName, email, password }).then(async (res: any) => {
+    const onSubmit = handleSubmit(async (data) => {
+        const { userName, email, password } = data
 
-            await Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: `${res?.data?.message}`,
-                showConfirmButton: false,
-                timer: 2500
+        await createAccount({ userName, email, password }).then(res => {
+            // console.log("get it: ", res.data.message)
+            Swal.fire({
+                title: `${res.data.message}`,
+                icon: "success",
+                timer: 3000,
+                showLoaderOnConfirm: true
             }).then(() => {
                 navigate("/register-info")
+            }).catch(async (err) => {
+                // console.log("get it: ", res.response.data.message)
+                await Swal.fire({
+                    title: "Error Found",
+                    icon: "error",
+                    timer: 3000,
+                    showLoaderOnConfirm: true
+                })
             })
+        }).catch(err => {
+            console.log("show: ", err)
         })
-
-        // reset()
     })
 
     return (
@@ -102,7 +108,25 @@ const RegisterScreen = () => {
                         {/* Form */}
 
                         <form
-                            className="flex flex-col items-center  w-[95%] mt-2">
+                            className="flex flex-col items-center  w-[95%] mt-2"
+
+                        // onSubmit={() => onSubmit()}
+                        >
+
+
+
+
+                            <div className="flex flex-col w-[90%] mt-3" >
+                                <div className="text-xs capitalize" >User Name</div>
+                                <input
+                                    {...register("userName")}
+                                    placeholder="Eneter your User Name "
+                                    className=" text-xs border-orange-200 p-1 border w-[100%] outline-none h-[40px] pl-3 text-neutral-700 focus:pt-[1.025rem] font-normal leading-tight transition-all duration-200 ease-linear focus:outline-none dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem] rounded"
+                                />
+                                {
+                                    errors.userName && <div className="text-[10px] text-end capitalize text-red-500 "> User Name Error</div>
+                                }
+                            </div>
 
 
 
@@ -155,7 +179,8 @@ const RegisterScreen = () => {
                         <div className="w-[70%] text-xs text-center mb-4" >By signing up, you agree to our <span className="text-[#F97316] font-semibold">Terms</span> and <span className="text-[#F97316] font-semibold" >Conditions</span>
                         </div>
 
-                        <button className="bg-[#F97316] font-semibold  rounded-sm text-white w-[97%] py-2 hover:scale-[1.015] transition-all duration-300  " type="submit" onClick={() => {
+                        <button className="bg-[#F97316] font-semibold  rounded-sm text-white w-[97%] py-2 hover:scale-[1.015] transition-all duration-300  " type="submit"
+                            onClick={() => {
 
                             onSubmit().then(() => {
                                 console.log("resolve")
@@ -163,7 +188,9 @@ const RegisterScreen = () => {
                                 console.log(err)
                             })
 
-                        }} >Sign up</button>
+                            }}
+
+                        >Sign up</button>
 
                     </div>
 

@@ -10,52 +10,57 @@ import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
+import PrivateRouter from "./PrivateRouter";
 
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
-    element: <MobileLayOut />,
+    element: <PrivateRouter>
+      <MobileLayOut />
+    </PrivateRouter>,
     children: [
       {
         index: true,
-        element: <MobileStart />,
+        element: <UserProfilePage />,
       },
       {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "password-reset",
-        element: <ForgetPassword />,
-      },
-    ],
-  },
-  {
-    path: "/user-profile",
+        path: "user-profile",
     element: <UserProfilePage />,
   },
   {
-    path: "/user-settings",
+    path: "user-settings",
     element: <UserSettingsPage />,
   },
   {
-    path: "/user-update",
+    path: "user-update",
     element: <UserUpdatePage />,
   },
   {
-    path: "/test",
+    path: "test",
     element: <Test />,
   },
   {
-    path: "/page/post",
+    path: "page/post",
     element: <ViewPosts />,
   },
   {
-    path: "/search/people",
+    path: "search/people",
     element: <Search />,
   },
   {
     path: "/new-yan",
     element: <CreatePost />,
   },
+
+    ],
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/password-reset",
+    element: <ForgetPassword />,
+  },
+
 ]);

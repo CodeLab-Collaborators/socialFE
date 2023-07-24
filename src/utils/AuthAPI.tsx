@@ -12,8 +12,9 @@ export const createAccount = async (data: iData) => {
       .then((res) => {
         return res;
       })
-      .catch((err) => {
+      .catch((err: Error) => {
         console.log(err);
+        return err
       });
   } catch (error) {
     console.log(error);
