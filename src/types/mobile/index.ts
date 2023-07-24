@@ -76,3 +76,9 @@ export type imageProp = {
   alt: string;
   onCancel: () => void;
 };
+
+export type imgData = {
+  setImages: React.Dispatch<React.SetStateAction<string[]>>;
+  icon: any;
+  css: string;
+};
