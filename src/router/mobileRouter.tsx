@@ -42,46 +42,47 @@ export const mobileRouter = createBrowserRouter([
         element: <UserProfilePage />,
       },
       {
-        path: "register",
-        element: <Register />,
+        path: "profile-page",
+        element: <UserProfilePage />,
       },
       {
-        path: "password-reset",
-        element: <ForgetPassword />,
+        path: "user-settings",
+        element: <UserSettingsPage />,
       },
       {
-        path: "verify",
-        element: <Verify />,
+        path: "profile-page/account-update",
+        element: <UserUpdatePage />,
       },
+      {
+        path: "home-page",
+        element: <Test />,
+      },
+      {
+        path: "single-post/:id",
+        element: <ViewPosts />,
+      },
+      {
+        path: "search-page",
+        element: <Search />,
+      },
+      {
+        path: "new-yan",
+        element: <CreatePost />,
+      },
+
     ],
   },
   {
-    path: "/profile-page",
-    element: <UserProfilePage />,
+    path: "/register",
+    element: <Register />,
   },
   {
-    path: "user-settings",
-    element: <UserSettingsPage />,
+    path: "/password-reset",
+    element: <ForgetPassword />,
   },
   {
-    path: "/profile-page/account-update",
-    element: <UserUpdatePage />,
-  },
-  {
-    path: "/home-page",
-    element: <Test />,
-  },
-  {
-    path: "/single-post/:id",
-    element: <ViewPosts />,
-  },
-  {
-    path: "/search-page",
-    element: <Search />,
-  },
-  {
-    path: "/new-yan",
-    element: <CreatePost />,
+    path: "/verify",
+    element: <Verify />,
   },
 
     ],
