@@ -10,10 +10,10 @@ import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
-import Verify from "../pages/mobile/auth/Verify";
 import Notifications from "../pages/mobile/notifications";
 import AllChats from "../pages/mobile/allChats";
 // import PrivateRouter from "./PrivateRouter";
+// import Verify from "../pages/mobile/auth/Verify";
 
 //Please use these exact routes :
 // log in page : "/"
@@ -31,14 +31,15 @@ import AllChats from "../pages/mobile/allChats";
 // settings page : "/user-settings"
 // update profile page : "/profile-page/account-update"
 // view single post page : "/single-post"
-
+import PrivateRouter from "./PrivateRouter";
+import Sign_in from "../pages/mobile/auth/Sign_in";
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
     element: (
-      // <PrivateRouter>
-      // </PrivateRouter>
-      <MobileLayOut />
+      <PrivateRouter>
+        <MobileLayOut />
+      </PrivateRouter>
     ),
     children: [
       {
@@ -91,8 +92,16 @@ export const mobileRouter = createBrowserRouter([
     path: "/password-reset",
     element: <ForgetPassword />,
   },
+  // {
+  //   path: "/verify",
+  //   element: <Verify />,
+  // },
   {
-    path: "/verify",
-    element: <Verify />,
+    path: "/sign-in",
+    element: <Sign_in />,
+  },
+  {
+    path: "/api/social/auth/:id/:token/verify",
+    element: <Sign_in />,
   },
 ]);
