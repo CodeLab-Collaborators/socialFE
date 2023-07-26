@@ -51,9 +51,7 @@ export const tabletRouter = createBrowserRouter([
     {
         path: "/signin",
         element: <SignInTabScreen />,
-    },
-    {
-        path: "/api/social/auth/:id/:token/verify",
-        element: <SignInTabScreen />,
-    },
+      },
+    
+  
 ]);
