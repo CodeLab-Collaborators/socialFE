@@ -5,6 +5,10 @@ import RegisterTabInfo from "../pages/tablet/auth/RegisterInfo"
 import SignInTabScreen from "../pages/tablet/auth/SignInTabScreen"
 import RegisterTabScreen from "../pages/tablet/auth/RegisterTabScreen"
 import PrivateRouter from "./PrivateRouter"
+import TabletDashboard from "../components/common/tabletLayout/TabletDashboard"
+import TableProfilePage from "../pages/tablet/TableProfilePage"
+import TabletSettings from "../pages/tablet/TabletSettings"
+
 
 //Please use these exact routes :
 // log in page : "/"
@@ -53,5 +57,18 @@ export const tabletRouter = createBrowserRouter([
         element: <SignInTabScreen />,
       },
     
-  
+      {
+        path: "/profile-page",
+        element : <TabletDashboard />,
+        children: [
+          {
+            index: true,
+            element: <TableProfilePage />,
+          },
+          {
+            path: "/profile-page/account-update",
+            element: <TabletSettings />,
+          },
+        ],
+      },
 ]);
