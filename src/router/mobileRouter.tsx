@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
 import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
@@ -10,7 +9,7 @@ import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
-import Verify from "../pages/mobile/auth/Verify";
+// import Verify from "../pages/mobile/auth/Verify";
 
 //Please use these exact routes :
 // log in page : "/"
@@ -29,13 +28,16 @@ import Verify from "../pages/mobile/auth/Verify";
 // update profile page : "/profile-page/account-update"
 // view single post page : "/single-post"
 import PrivateRouter from "./PrivateRouter";
+import Sign_in from "../pages/mobile/auth/Sign_in";
 
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
-    element: <PrivateRouter>
-      <MobileLayOut />
-    </PrivateRouter>,
+    element: (
+      <PrivateRouter>
+        <MobileLayOut />
+      </PrivateRouter>
+    ),
     children: [
       {
         index: true,
@@ -69,7 +71,6 @@ export const mobileRouter = createBrowserRouter([
         path: "new-yan",
         element: <CreatePost />,
       },
-
     ],
   },
   {
@@ -80,13 +81,16 @@ export const mobileRouter = createBrowserRouter([
     path: "/password-reset",
     element: <ForgetPassword />,
   },
+  // {
+  //   path: "/verify",
+  //   element: <Verify />,
+  // },
   {
-    path: "/verify",
-    element: <Verify />,
+    path: "/sign-in",
+    element: <Sign_in />,
   },
-
-    ],
-)
-
-
-
+  {
+    path: "/api/social/auth/:id/:token/verify",
+    element: <Sign_in />,
+  },
+]);
