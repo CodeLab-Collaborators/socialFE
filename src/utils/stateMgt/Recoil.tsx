@@ -2,7 +2,7 @@ import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 import { CreateUserParams } from "../types";
 
-const { persistAtom } = recoilPersist();
+const persistAtom: any = recoilPersist()
 
 export const createUserState = atom({
   key: "New Users",
