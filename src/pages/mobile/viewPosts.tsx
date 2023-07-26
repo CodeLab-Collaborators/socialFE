@@ -1,5 +1,4 @@
-import { FiArrowLeft } from "react-icons/fi";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProfilePhotos from "../../components/mobile/reusables/profilePhotos";
 import { SlOptions } from "react-icons/sl";
 import ave from "../../assets/tony.jpg";
@@ -12,21 +11,15 @@ import { PiShareFatThin } from "react-icons/pi";
 import { dummyPosts } from "./dummy/data/posts";
 import ImageComponent from "../../components/mobile/image";
 import Comments from "../../components/mobile/comments";
+import SectionHeader from "../../components/mobile/sectionHeaders/sectionHeader";
 
 const ViewPosts = () => {
-  const navigate = useNavigate();
   const { id } = useParams();
   const data = dummyPosts.find((el) => el.id === id);
   return (
     <div className="w-full pb-12 min-h-screen bg-white">
-      <div className="pl-5 flex items-center py-4 bg-white gap-5">
-        <div
-          onClick={() => {
-            navigate(-1);
-          }}>
-          <FiArrowLeft style={{ fontSize: "20px" }} />
-        </div>
-        <div>Yet</div>
+      <div className="pl-5 py-4">
+        <SectionHeader headerTitle="Yet" />
       </div>
       <div className="w-full mt-4 flex flex-col items-center">
         <div className="w-[88%]">

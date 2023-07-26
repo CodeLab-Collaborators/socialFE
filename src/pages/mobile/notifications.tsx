@@ -1,9 +1,13 @@
 import { useState } from "react";
 import Category from "../../components/mobile/reusables/category";
-import NotificationsComponent from "../../components/mobile/reusables/notificationsComponent";
-import ava from "../../assets/tony.jpg";
+import AllNotifications from "../../components/mobile/allNotifications";
+import RepliyNotifications from "../../components/mobile/repliyNotifications";
+import MentionNotifications from "../../components/mobile/mentionNotifications";
+import RepostNotifications from "../../components/mobile/repostNotifications";
+import SectionHeader from "../../components/mobile/sectionHeaders/sectionHeader";
+
 const Notifications = () => {
-  const [all, setAll] = useState<boolean>(false);
+  const [all, setAll] = useState<boolean>(true);
   const [replies, setReplies] = useState<boolean>(false);
   const [mentions, setMentions] = useState<boolean>(false);
   const [reposts, setReposts] = useState<boolean>(false);
@@ -33,35 +37,45 @@ const Notifications = () => {
     setReposts(true);
   };
   return (
-    <div className="w-full min-h-screen py-1 flex flex-col items-center gap-6">
-      <div className="w-11/12 text-[21px]">Activity</div>
-      <div className="w-full pl-4 overflow-x-scroll no-scrollbar flex items-center gap-2">
+    <div className="w-full min-h-screen py-3 flex flex-col items-center">
+      <div className="w-11/12 text-[21px]">
+        <SectionHeader headerTitle="Activity" />
+      </div>
+      <div className="w-full pl-4 overflow-x-scroll no-scrollbar flex items-center gap-2 mt-3">
         <div onClick={activateAll}>
-          <Category category="All" theme={all ? "dark" : ""} />
+          <Category
+            sizeInPexels="100px"
+            category="All"
+            theme={all ? "dark" : ""}
+          />
         </div>
         <div onClick={activateReplies}>
-          <Category category="Replies" theme={replies ? "dark" : ""} />
+          <Category
+            sizeInPexels="100px"
+            category="Replies"
+            theme={replies ? "dark" : ""}
+          />
         </div>
         <div onClick={activateMentions}>
-          <Category category="Mentions" theme={mentions ? "dark" : ""} />
+          <Category
+            sizeInPexels="100px"
+            category="Mentions"
+            theme={mentions ? "dark" : ""}
+          />
         </div>
         <div onClick={activateReposts}>
-          <Category category="Re-Posts" theme={reposts ? "dark" : ""} />
+          <Category
+            sizeInPexels="100px"
+            category="Re-Posts"
+            theme={reposts ? "dark" : ""}
+          />
         </div>
       </div>
-      <div className="w-11/12 flex flex-col gap-6">
-        <NotificationsComponent
-          profilePhoto={ava}
-          name="Tony Stark"
-          about="Followed you"
-          action="Follow"
-        />
-        <NotificationsComponent
-          profilePhoto={ava}
-          name="Tony Stark"
-          about="Followed you"
-          action="Follow"
-        />
+      <div className="w-11/12 mt-3">
+        {all ? <AllNotifications /> : null}
+        {replies ? <RepliyNotifications /> : null}
+        {mentions ? <MentionNotifications /> : null}
+        {reposts ? <RepostNotifications /> : null}
       </div>
     </div>
   );

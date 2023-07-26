@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import MobileStart from "../pages/mobile/MobileStart";
+// import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
 import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
@@ -12,6 +12,8 @@ import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
 import Verify from "../pages/mobile/auth/Verify";
 import Notifications from "../pages/mobile/notifications";
+import AllChats from "../pages/mobile/allChats";
+// import PrivateRouter from "./PrivateRouter";
 
 //Please use these exact routes :
 // log in page : "/"
@@ -29,7 +31,6 @@ import Notifications from "../pages/mobile/notifications";
 // settings page : "/user-settings"
 // update profile page : "/profile-page/account-update"
 // view single post page : "/single-post"
-// import PrivateRouter from "./PrivateRouter";
 
 export const mobileRouter = createBrowserRouter([
   {
@@ -73,8 +74,12 @@ export const mobileRouter = createBrowserRouter([
         element: <CreatePost />,
       },
       {
-        path: "notifications-page",
+        path: "/notifications-page",
         element: <Notifications />,
+      },
+      {
+        path: "/messages-page",
+        element: <AllChats />,
       },
     ],
   },
