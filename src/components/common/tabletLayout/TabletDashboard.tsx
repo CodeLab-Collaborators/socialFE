@@ -1,6 +1,7 @@
 
 import { Outlet } from 'react-router-dom'
 import TabletViewSideBar from '../../static/TabletViewSideBar'
+import DestopFooter from '../../static/DestopFooter'
 
 
 const TabletDashboard = () => {
@@ -8,6 +9,7 @@ const TabletDashboard = () => {
 <div>
     <TabletViewSideBar />
     <Outlet />
+    <DestopFooter />
 </div>
            
     
