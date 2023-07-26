@@ -28,56 +28,65 @@ import Verify from "../pages/mobile/auth/Verify";
 // settings page : "/user-settings"
 // update profile page : "/profile-page/account-update"
 // view single post page : "/single-post"
+import PrivateRouter from "./PrivateRouter";
 
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
-    element: <MobileLayOut />,
+    element: <PrivateRouter>
+      <MobileLayOut />
+    </PrivateRouter>,
     children: [
       {
         index: true,
-        element: <MobileStart />,
+        element: <UserProfilePage />,
       },
       {
-        path: "register",
-        element: <Register />,
+        path: "profile-page",
+        element: <UserProfilePage />,
       },
       {
-        path: "password-reset",
-        element: <ForgetPassword />,
+        path: "user-settings",
+        element: <UserSettingsPage />,
       },
       {
-        path: "verify",
-        element: <Verify />,
+        path: "profile-page/account-update",
+        element: <UserUpdatePage />,
       },
+      {
+        path: "home-page",
+        element: <Test />,
+      },
+      {
+        path: "single-post/:id",
+        element: <ViewPosts />,
+      },
+      {
+        path: "search-page",
+        element: <Search />,
+      },
+      {
+        path: "new-yan",
+        element: <CreatePost />,
+      },
+
     ],
   },
   {
-    path: "/profile-page",
-    element: <UserProfilePage />,
+    path: "/register",
+    element: <Register />,
   },
   {
-    path: "/user-settings",
-    element: <UserSettingsPage />,
+    path: "/password-reset",
+    element: <ForgetPassword />,
   },
   {
-    path: "/profile-page/account-update",
-    element: <UserUpdatePage />,
+    path: "/verify",
+    element: <Verify />,
   },
-  {
-    path: "/home-page",
-    element: <Test />,
-  },
-  {
-    path: "/single-post",
-    element: <ViewPosts />,
-  },
-  {
-    path: "/search-page",
-    element: <Search />,
-  },
-  {
-    path: "/new-yan",
-    element: <CreatePost />,
-  },
-]);
+
+    ],
+)
+
+
+

@@ -9,6 +9,7 @@ import ImageThumb from "../../../../reusables/ImageThumb";
 import { ChangeEvent, useRef, useState } from "react";
 import pic from "../../../../assets/myPix.png";
 import axios from "axios";
+import UploadImage from "../../../../components/mobile/reusables/uploadImage";
 
 const API_URL = "https://api.example.com/tweets";
 
@@ -36,44 +37,8 @@ const CreatePost = () => {
       setImages([]);
       navigate("/home"); // Redirect to the home page or the timeline page after posting
     } catch (error) {
-      console.error("Error posting tweet:", error);
+      // console.error("Error posting tweet:", error);
       // Handle error, e.g., display an error message to the user.
-    }
-  };
-
-  //
-
-  const handleImageChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    const selectedFiles = event.target.files;
-
-    if (!selectedFiles) return;
-
-    const imagePromises: Promise<string>[] = [];
-
-    for (let i = 0; i < selectedFiles.length; i++) {
-      const file = selectedFiles[i];
-      const promise = new Promise<string>((resolve) => {
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-          if (typeof reader.result === "string") {
-            resolve(reader.result);
-          } else {
-            resolve("");
-          }
-        };
-
-        reader.readAsDataURL(file);
-      });
-
-      imagePromises.push(promise);
-    }
-
-    try {
-      const imageDataArray = await Promise.all(imagePromises);
-      setImages(imageDataArray);
-    } catch (error) {
-      console.error("Error reading images:", error);
     }
   };
 
@@ -121,7 +86,7 @@ const CreatePost = () => {
       {/* text area move to a component */}
       <div className="w-full flex gap-4 px-5 pt-4 h-full ">
         {/* profile pic */}
-        <div className="overflow-hidden rounded-full w-[50px] h-[45px]">
+        <div className="overflow-hidden rounded-full w-[45px] h-[40px]">
           <img src={pic} className="w-full h-full object-cover object-top" />
         </div>
 
@@ -139,20 +104,11 @@ const CreatePost = () => {
         {/* upload image */}
         <div className="px-5 py-4 flex overflow-x-scroll no-scrollbar">
           {/* box */}
-          <label
-            htmlFor="imageInput"
-            className="w-[90px] h-[95px] mr-[10px] border rounded-2xl cursor-pointer flex items-center justify-center text-orange-500 text-4xl"
-          >
-            <BiCamera />
-          </label>
-          <input
-            type="file"
-            accept="image/*"
-            multiple
-            ref={fileInputRef}
-            onChange={handleImageChange}
-            id="imageInput"
-            style={{ display: "none" }}
+
+          <UploadImage
+            setImages={setImages}
+            icon={<BiCamera />}
+            css="w-[80px] h-[80px] mr-[10px] border rounded-2xl cursor-pointer flex items-center justify-center text-orange-500 text-4xl"
           />
           {/* image container */}
           <div className="flex whitespace-nowrap gap-3">
