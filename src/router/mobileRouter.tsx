@@ -33,9 +33,11 @@ import PrivateRouter from "./PrivateRouter";
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
-    element: <PrivateRouter>
-      <MobileLayOut />
-    </PrivateRouter>,
+    element: (
+      <PrivateRouter>
+        <MobileLayOut />
+      </PrivateRouter>
+    ),
     children: [
       {
         index: true,
@@ -69,7 +71,6 @@ export const mobileRouter = createBrowserRouter([
         path: "new-yan",
         element: <CreatePost />,
       },
-
     ],
   },
   {
@@ -84,9 +85,4 @@ export const mobileRouter = createBrowserRouter([
     path: "/verify",
     element: <Verify />,
   },
-
-    ],
-)
-
-
-
+]);
