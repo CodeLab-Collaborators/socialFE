@@ -28,7 +28,7 @@ export const dummyPosts = [
         views: 1040,
         replies: 67,
         comment:
-          "Will the GOAT turn fortunes around and gey Inter Miami off from bottom of the MLS ? 🤔",
+          "Will the GOAT turn fortunes around and get Inter Miami off from bottom of the MLS ? 🤔",
       },
       {
         name: "Pepper Potts",
@@ -37,7 +37,7 @@ export const dummyPosts = [
         views: 1040,
         replies: 67,
         comment:
-          "Will the GOAT turn fortunes around and gey Inter Miami off from bottom of the MLS ? 🤔",
+          "Will the GOAT turn fortunes around and get Inter Miami off from bottom of the MLS ? 🤔",
       },
     ],
     time: "12h",
@@ -45,7 +45,7 @@ export const dummyPosts = [
     replies: 67,
     reposts: 67,
     views: 1040,
-    pictures: [u4, u5, u6],
+    pictures: [u6, u4, u9],
     message:
       "Tom Heaton, starting in goal while new signing André Onana continues to build up his fitness following his move from Inter, made a good double save from Gabriel Martinelli. Mason Mount started the game for United in front of a sell-out crowd of 82,262 -- the highest attendance for a soccer match in New Jersey. while Declan Rice, Jurriën Timber and Kai Havertz were all named in a strong team picked by Arsenal manager Mikel Arteta",
   },
@@ -64,7 +64,7 @@ export const dummyPosts = [
         views: 1040,
         replies: 67,
         comment:
-          "Will the GOAT turn fortunes around and gey Inter Miami off from bottom of the MLS ? 🤔",
+          "Will the GOAT turn fortunes around and get Inter Miami off from bottom of the MLS ? 🤔",
       },
       {
         name: "Pepper Potts",
@@ -73,7 +73,7 @@ export const dummyPosts = [
         views: 1040,
         replies: 67,
         comment:
-          "Will the GOAT turn fortunes around and gey Inter Miami off from bottom of the MLS ? 🤔",
+          "Will the GOAT turn fortunes around and get Inter Miami off from bottom of the MLS ? 🤔",
       },
     ],
     time: "9h",
@@ -82,7 +82,7 @@ export const dummyPosts = [
     replies: 67,
     reposts: 67,
     views: 1040,
-    pictures: [u5, u2, u3],
+    pictures: [u11, u5, u3],
     message:
       "Bruno Fernandes marked his appointment as United's permanent captain with a goal in the first half, quickly followed by another from Jadon Sancho, who was deployed at the No. 9 in Erik ten Hag's system.",
   },
@@ -101,7 +101,7 @@ export const dummyPosts = [
         views: 1040,
         replies: 67,
         comment:
-          "Will the GOAT turn fortunes around and gey Inter Miami off from bottom of the MLS ? 🤔",
+          "Will the GOAT turn fortunes around and get Inter Miami off from bottom of the MLS ? 🤔",
       },
       {
         name: "Pepper Potts",
@@ -110,7 +110,7 @@ export const dummyPosts = [
         views: 1040,
         replies: 67,
         comment:
-          "Will the GOAT turn fortunes around and gey Inter Miami off from bottom of the MLS ? 🤔",
+          "Will the GOAT turn fortunes around and get Inter Miami off from bottom of the MLS ? 🤔",
       },
     ],
     time: "9h",
@@ -119,7 +119,7 @@ export const dummyPosts = [
     replies: 67,
     reposts: 67,
     views: 1040,
-    pictures: [u7, u1, u8],
+    pictures: [u8, u1, u2],
     message:
       "Bruno Fernandes marked his appointment as United's permanent captain with a goal in the first half, quickly followed by another from Jadon Sancho, who was deployed at the No. 9 in Erik ten Hag's system.",
   },
@@ -156,7 +156,7 @@ export const dummyPosts = [
     replies: 67,
     reposts: 67,
     views: 1040,
-    pictures: [u9, u10, u11],
+    pictures: [u7, u10, u11],
     message:
       "Bruno Fernandes marked his appointment as United's permanent captain with a goal in the first half, quickly followed by another from Jadon Sancho, who was deployed at the No. 9 in Erik ten Hag's system.",
   },

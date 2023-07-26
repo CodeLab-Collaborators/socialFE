@@ -18,10 +18,10 @@ const Navs = () => {
       <Link to="/search-page">
         <Icons icon={<TfiSearch />} sizeInPexels="20px" />
       </Link>
-      <Link to="/home-page">
+      <Link to="/messages-page">
         <Icons icon={<PiChatTextThin />} sizeInPexels="20px" />
       </Link>
-      <Link to="/home-page">
+      <Link to="/notifications-page">
         <Icons icon={<PiNotificationThin />} sizeInPexels="20px" />
       </Link>
       <ProfilePhotos sizeInPexels="24px" photo={avatar} />
