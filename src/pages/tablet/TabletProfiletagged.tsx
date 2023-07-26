@@ -5,29 +5,26 @@ import img3 from "../../assets/ave.jpg"
 const TabletProfiletagged = () => {
   return (
       <div className="w-[100%] h-[100%] flex flex-wrap mt-[12px]">
-          <img
+        
+        <img
               src={img}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
-          <img
+        <img
               src={img2}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
-          <img
+        <img
               src={img3}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
-          <img
+        <img
+              src={img2}
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
+          />
+        <img
               src={img}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
-          />
-          <img
-              src={img2}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
-          />
-          <img
-              src={img3}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
     </div>
   )
