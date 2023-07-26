@@ -4,6 +4,10 @@ import TabletLayOut from "../components/common/tabletLayout/TabletLayOut";
 import RegisterTabInfo from "../pages/tablet/auth/RegisterInfo";
 import SignInTabScreen from "../pages/tablet/auth/SignInTabScreen";
 import RegisterTabScreen from "../pages/tablet/auth/RegisterTabScreen";
+import TableProfilePage from "../pages/tablet/TableProfilePage";
+import TabletSettings from "../pages/tablet/TabletSettings";
+import TabletDashboard from "../components/common/tabletLayout/TabletDashboard";
+import TabletViewSideBar from "../components/static/TabletViewSideBar";
 
 //Please use these exact routes :
 // log in page : "/"
@@ -49,4 +53,22 @@ export const tabletRouter = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/profile-page",
+    element : <TabletDashboard />,
+    children: [
+      {
+        index: true,
+        element: <TableProfilePage />,
+      },
+      {
+        path: "/profile-page/account-update",
+        element: <TabletSettings />,
+      },
+    ],
+  },
+  {
+    path : "/TabletViewSideBar",
+    element : <TabletViewSideBar />
+  }
 ]);
