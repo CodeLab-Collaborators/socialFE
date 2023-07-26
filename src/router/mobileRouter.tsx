@@ -11,6 +11,7 @@ import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
 import Verify from "../pages/mobile/auth/Verify";
+import Notifications from "../pages/mobile/notifications";
 
 //Please use these exact routes :
 // log in page : "/"
@@ -28,15 +29,15 @@ import Verify from "../pages/mobile/auth/Verify";
 // settings page : "/user-settings"
 // update profile page : "/profile-page/account-update"
 // view single post page : "/single-post"
-import PrivateRouter from "./PrivateRouter";
+// import PrivateRouter from "./PrivateRouter";
 
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
     element: (
-      <PrivateRouter>
-        <MobileLayOut />
-      </PrivateRouter>
+      // <PrivateRouter>
+      // </PrivateRouter>
+      <MobileLayOut />
     ),
     children: [
       {
@@ -70,6 +71,10 @@ export const mobileRouter = createBrowserRouter([
       {
         path: "new-yan",
         element: <CreatePost />,
+      },
+      {
+        path: "notifications-page",
+        element: <Notifications />,
       },
     ],
   },
