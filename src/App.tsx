@@ -1,17 +1,14 @@
-import { MainRouter } from "./router/mainRouter";
+// import { MainRouter } from "./router/mainRouter";
 import { RecoilRoot } from "recoil";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { PersistGate } from 'redux-persist/integration/react'
-import {
-  persistStore,
-} from 'redux-persist'
-import { Provider } from "react-redux"
+import { MainRouter } from "./router/mainRouter";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+import { Provider } from "react-redux";
 import { store } from "./global/store";
 
-
-let persistor = persistStore(store)
-
+let persistor = persistStore(store);
 // import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -19,11 +16,11 @@ const App = () => {
     <div>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-
-      <RecoilRoot>
-        <MainRouter />
-        <ToastContainer />
+          <RecoilRoot>
+            <MainRouter />
+            <ToastContainer />
           </RecoilRoot>
+          <MainRouter />
         </PersistGate>
       </Provider>
     </div>

@@ -4,7 +4,10 @@ type iIMage = {
 };
 const ImageComponent: React.FC<iIMage> = ({ image }) => {
   return (
-    <img src={image} className="w-screen h-[300px] md:hidden object-top" />
+    <img
+      src={image}
+      className="w-screen h-[300px] md:hidden object-cover object-top"
+    />
   );
 };
 

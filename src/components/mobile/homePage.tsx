@@ -23,7 +23,7 @@ const HomePage = () => {
             </div>
             <div className="text-[11px] flex-1">
               <Link to={`/single-post/${el.id}`}>
-                <div className="flex flex-wrap w-full text-gray-700 items-center gap-1">
+                <div className="flex flex-wrap gap-0 w-full text-gray-700 items-center">
                   <Name name={el.user.name} color="goldenrod" />
                   {el.user.userName}
                   <div>
@@ -31,10 +31,10 @@ const HomePage = () => {
                   </div>
                   <div>{el.time}</div>
                 </div>
-                <div>{el.title}</div>
+                <div className="mt-2">{el.title}</div>
                 <div className="w-full h-fit mt-3">
                   <img
-                    className="w-full h-[200px] rounded-lg"
+                    className="w-full h-[200px] object-top object-cover  rounded-lg"
                     src={el.pictures[0]}
                     alt=""
                   />
