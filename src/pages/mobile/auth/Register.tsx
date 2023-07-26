@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { createAccount } from "../../../utils/AuthAPI";
 import Swal from "sweetalert2";
-import { CreateUserParams } from "../../../utils/types";
+import { iData } from "../../desktop/auth/RegisterScreen";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Register = () => {
     resolver: yupResolver(authSchema),
   });
 
-  const onSubmit = handleSubmit(async (data: CreateUserParams) => {
+  const onSubmit = handleSubmit(async (data: iData) => {
     const { fullName, userName, email, password } = data;
 
     // console.log("Pushing");
@@ -34,7 +34,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 2500,
         }).then(() => {
-          navigate("/verify");
+          navigate("/sign-in");
         });
       }
     );
@@ -94,7 +94,7 @@ const Register = () => {
               className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
               placeholder="Email"
               {...register("email")}
-              maxLength={22}
+              maxLength={30}
               required={true}
             />
             <label className="pointer-events-none absolute left-0 top-[-4px] origin-[0_0] border border-solid border-transparent px-3 py-4 text-neutral-500 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85]  peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none dark:text-neutral-200">
@@ -107,7 +107,7 @@ const Register = () => {
               type="text"
               className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
               placeholder="Username"
-              maxLength={22}
+              maxLength={25}
               required={true}
               {...register("userName")}
             />
@@ -120,7 +120,7 @@ const Register = () => {
               type="password"
               className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
               placeholder="Password"
-              maxLength={22}
+              maxLength={25}
               aria-required={true}
               {...register("password")}
             />
