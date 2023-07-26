@@ -7,27 +7,27 @@ const TabletProfilepost = () => {
           
           <img
               src={img}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
           <img
               src={img2}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
           <img
               src={img}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
           <img
               src={img2}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
           <img
               src={img}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
           <img
               src={img2}
-              className="w-[325px] h-[330px] object-cover m-[3px]"
+              className="w-[250px] h-[250px] object-cover m-[3px] cursor-pointer"
           />
     </div>
   )
