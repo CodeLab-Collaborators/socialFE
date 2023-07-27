@@ -7,6 +7,7 @@ import SignInScreen from "../pages/desktop/auth/SignIn"
 import Profiepage from "../pages/desktop/Profiepage"
 import Settingsprofile from "../pages/desktop/Settingsprofile"
 import NotificationPage from "../pages/desktop/NotificationPage"
+import PrivateRouter from "./PrivateRouter"
 
 //Please use these exact routes :
 // log in page : "/"
@@ -27,50 +28,64 @@ import NotificationPage from "../pages/desktop/NotificationPage"
 
 export const desktopRouter = createBrowserRouter([
   {
-    path: "/signin",
-    element: <SignInScreen />,
-  },
-  {
-    path: "register",
-    element: <RegisterScreen />,
-  },
-  {
     path: "/",
-    element: <DesktopLayOut />,
+    element: (
+      <PrivateRouter>
+        <DesktopLayOut />
+      </PrivateRouter>
+    ),
     children: [
       {
         index: true,
-        path: "home",
-        element: <DesktopStart />,
-      },
-      {
-        path: "register-info",
-        element: <RegisterInfo />,
-      },
-      {
-        path: "api/social/auth/:id/:token/verify",
-        element: <SignInScreen />,
-      },
-    ],
-  },
-  {
-    path: "/profile-page",
-    children: [
-      {
-        index: true,
-        element: <Profiepage />,
-      },
-      {
-        path: "account-update",
-        element: <Settingsprofile />,
-      },
-    ],
-  },
+        element: <Profiepage />
+      }
+    ]
+  }
+  // {
+  //   path: "/signin",
+  //   element: <SignInScreen />,
+  // },
+  // {
+  //   path: "register",
+  //   element: <RegisterScreen />,
+  // },
+  // {
+  //   path: "/",
+  //   element: <DesktopLayOut />,
+  //   children: [
+  //     {
+  //       index: true,
+  //       path: "home",
+  //       element: <DesktopStart />,
+  //     },
+  //     {
+  //       path: "register-info",
+  //       element: <RegisterInfo />,
+  //     },
+  //     {
+  //       path: "api/social/auth/:id/:token/verify",
+  //       element: <SignInScreen />,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/profile-page",
+  //   children: [
+  //     {
+  //       index: true,
+  //       element: <Profiepage />,
+  //     },
+  //     {
+  //       path: "account-update",
+  //       element: <Settingsprofile />,
+  //     },
+  //   ],
+  // },
 
-  {
-    path: "notifications",
-    element: <NotificationPage />,
-  },
+  // {
+  //   path: "notifications",
+  //   element: <NotificationPage />,
+  // },
   // {
   //     path: "account-update",
   //     element: <Settingsprofile />
