@@ -1,8 +1,7 @@
-import axios from "axios"
+import axios from "axios";
 
+const url = "https://social-connect-797u.onrender.com/api/social/auth";
 
-const url = "https://social-connect-797u.onrender.com"
-
-export const loadState = async () => {
-    return await axios.get(url)
-}
+export const loadState = async (id: any, path: string) => {
+  return await axios.get(`${url}/${id}/${path}`);
+};
