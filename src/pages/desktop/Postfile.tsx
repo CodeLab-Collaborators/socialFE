@@ -41,7 +41,7 @@ const Postfile = () => {
         
          <div className="w-[100%] h-[1px] bg-[#DBDBDB] mt-[16px]"></div>
 
-              <div className="w-[100%] flex h-[48px] mt-[4px] items-center">
+              <div className="w-[100%] flex h-[48px] mt-[4px] items-center justify-between">
                   <div className="flex">
                       <div className="text-blue-500 cursor-pointer mr-[17px]"><BsImages /></div>
                       <div className="text-blue-500 cursor-pointer text-[20px] mr-[17px]"><AiOutlineGif /></div>
@@ -49,7 +49,11 @@ const Postfile = () => {
                           <BiSmile />
                       </button>
                       <div className="text-blue-500 cursor-pointer text-[20px]"><HiOutlineLocationMarker /></div>
-                  </div>
+                    </div>
+                    
+                    <button className="w-[90px] h-[35px] flex justify-center items-center text-[#fff] rounded-full bg-blue-500">
+                        Tweet
+                    </button>
 
         {showEmojis && (
                       <div>
