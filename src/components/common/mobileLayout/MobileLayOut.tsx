@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import DestopFooter from "../../static/DestopFooter"
+import Navs from "../../mobile/navs";
 
 const MobileLayOut = () => {
   return (
     <div className="overflow-x-hidden">
       <Outlet />
-      <DestopFooter />
+      <Navs />
     </div>
   );
 };

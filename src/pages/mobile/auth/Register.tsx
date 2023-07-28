@@ -120,7 +120,7 @@ const Register = () => {
               type="password"
               className="peer m-0 block h-[40px] text-xs w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent  focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none  dark:border-neutral-600 dark:text-neutral-200 dark: [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
               placeholder="Password"
-              maxLength={25}
+              maxLength={35}
               aria-required={true}
               {...register("password")}
             />
