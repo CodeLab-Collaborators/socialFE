@@ -31,15 +31,15 @@ import AllChats from "../pages/mobile/allChats";
 // settings page : "/user-settings"
 // update profile page : "/profile-page/account-update"
 // view single post page : "/single-post"
-// import PrivateRouter from "./PrivateRouter";
+import PrivateRouter from "./PrivateRouter";
 import Sign_in from "../pages/mobile/auth/Sign_in";
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
     element: (
-      <MobileLayOut />
-      // <PrivateRouter>
-      // </PrivateRouter>
+      <PrivateRouter>
+        <MobileLayOut />
+      </PrivateRouter>
     ),
     children: [
       {
