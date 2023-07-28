@@ -5,7 +5,7 @@ import UserInfo from "./UserInfo";
 
 const UserProfilePage = () => {
   return (
-    <div className="min-h-[94vh] max-h-full w-full">
+    <div className="min-h-[94vh] max-h-full h-full w-full">
       <ProfileHeader />
       <UserInfo />
       <UserBio />

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Icons from "../../../components/mobile/reusables/icons";
+import HomePage from "../../../components/mobile/homePage";
 
 const TabContent = ({ content }: any) => {
   return <div>{content}</div>;
@@ -12,17 +12,17 @@ const ToggleSectionHeader = () => {
   // Define content for each tab
   const tabContents = [
     // "Content for Tweets tab",
-    <Icons icon="hello" sizeInPexels="10px" />,
+    <HomePage />,
     "Content for Retweets tab",
     "Content for Replies tab",
     "Content for Likes tab",
   ];
 
   return (
-    <div className="md:px-8 mt-2">
+    <div className="md:px-8 mt-2 h-full">
       <ul
         role="tablist"
-        className="mx-auto px-4 border-b flex items-start gap-x-10 overflow-x-auto no-scrollbar text-[12px]"
+        className="mx-auto sticky top-0 px-4 border-b flex items-start gap-x-10 overflow-x-auto no-scrollbar text-[12px]"
       >
         {tabItems.map((item, idx) => (
           <li

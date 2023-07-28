@@ -14,6 +14,7 @@ export const useUser = () => {
       const user: any = jwt_decode(token);
       loadState(user?.id, "get-one").then((res) => {
         dispatch(getUser(res.data.data));
+        console.log(`this is user`, res.data.data);
       });
     } else {
       navigate("/sign-in");

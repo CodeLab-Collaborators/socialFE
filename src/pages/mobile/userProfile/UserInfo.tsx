@@ -1,32 +1,51 @@
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import jwt_decode from "jwt-decode";
+import { Link, useNavigate } from "react-router-dom";
 import cover from "../../../assets/9.jpeg";
+import { loadState } from "../../../utils/StateAPI";
+import { getUser } from "../../../global/globalState";
+import { useEffect } from "react";
 
 const UserInfo = () => {
-  //   const initials =
-  //     user?.fullName.charAt(0).toUpperCase() +
-  //     user?.fullName.split(" ").pop().charAt(0).toUpperCase();
+  const user = useSelector((state: any) => state.viewUserDetails);
+  const navigate = useNavigate();
+  const token = useSelector((state: any) => state.user.encrypt);
+  const dispatch = useDispatch();
 
-  //   console.log(`this is initials`, initials);
+  useEffect(() => {
+    try {
+      if (token) {
+        const user: any = jwt_decode(token);
+        loadState(user?.id, "get-one").then((res) => {
+          dispatch(getUser(res.data.data));
+        });
+      } else {
+        navigate("/sign-in");
+      }
+    } catch (error) {
+      console.log(`error getting user`, error);
+    }
+  }, [token]);
 
-  //   console.log(`this is user`, validatedUser);
+  // console.log(`this is user`, user);
 
   return (
     <div
-      className="relative h-[20vh] bg-orange-300 w-full"
+      className="relative h-[23vh] bg-orange-300 w-full"
       style={{ backgroundImage: `url(${cover})` }}
     >
       {/* cover image */}
-      <div className="absolute bottom-[-85px] left-4 w-[92%] h-full flex gap-3 justify-between items-center ">
+      <div className="absolute inset-[120px] left-4 w-[92%] h-full flex gap-3 justify-between items-center ">
         <div className="w-[60%] h-full ">
           {/* profile pic */}
-          <div className="w-[90px] h-[90px] bg-orange-500 border-[4px] border-white rounded-full">
-            <img src="" alt="dp" />
+          <div className="w-[90px] text-xs h-[90px] flex items-center justify-center bg-orange-500 border-[4px] border-white rounded-full">
+            <img src="" alt={user?.userName} />
           </div>
           {/* display name */}
-          <p className=" pt-1 text-[19px] font-bold ">Louis Etor</p>
+          <p className=" pt-1 text-[19px] font-bold ">{user.fullName}</p>
           {/* username */}
           <span className="lowercase text-gray-500 text-[13px]">
-            @louisetor
+            @{user?.userName}
           </span>
         </div>
         <div className="w-full h-full  flex items-center justify-end">
