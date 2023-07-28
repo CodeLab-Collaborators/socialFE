@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+// import MobileStart from "../pages/mobile/MobileStart";
 import MobileLayOut from "../components/common/mobileLayout/MobileLayOut";
 import Register from "../pages/mobile/auth/Register";
 import UserProfilePage from "../pages/mobile/userProfile/UserProfilePage";
@@ -9,6 +10,9 @@ import Test from "../pages/mobile/test";
 import ViewPosts from "../pages/mobile/viewPosts";
 import Search from "../pages/mobile/search";
 import CreatePost from "../pages/mobile/pages/post/CreatePost";
+import Notifications from "../pages/mobile/notifications";
+import AllChats from "../pages/mobile/allChats";
+// import PrivateRouter from "./PrivateRouter";
 // import Verify from "../pages/mobile/auth/Verify";
 
 //Please use these exact routes :
@@ -29,7 +33,6 @@ import CreatePost from "../pages/mobile/pages/post/CreatePost";
 // view single post page : "/single-post"
 import PrivateRouter from "./PrivateRouter";
 import Sign_in from "../pages/mobile/auth/Sign_in";
-
 export const mobileRouter = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +73,14 @@ export const mobileRouter = createBrowserRouter([
       {
         path: "new-yan",
         element: <CreatePost />,
+      },
+      {
+        path: "/notifications-page",
+        element: <Notifications />,
+      },
+      {
+        path: "/messages-page",
+        element: <AllChats />,
       },
     ],
   },

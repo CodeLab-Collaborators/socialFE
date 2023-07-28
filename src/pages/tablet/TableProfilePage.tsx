@@ -1,14 +1,16 @@
 import LeftSidebar from "../../components/static/LeftSidebar"
 import {CiSettings} from "react-icons/ci"
 import img from "../../assets/myPix.png"
-import Profilepost from "./Profilepost"
+
 import {useState} from "react"
-import Profilesaved from "./Profilesaved"
-import Profiletagged from "./Profiletagged"
+
 import { NavLink } from "react-router-dom"
+import TabletProfilepost from "./TabletProfilepost"
+import TabletProfilesaved from "./TabletProfilesaved"
+import TabletProfiletagged from "./TabletProfiletagged"
 
 
-const Profiepage = () => {
+const TableProfilePage = () => {
   const [show, setShow] = useState(true)
   const [showsaved, setShowsaved] = useState(false)
   const [showtagged, setShowtagged] = useState(false)
@@ -34,7 +36,6 @@ const Profiepage = () => {
 
   return (
       <div className="flex w-[100%]">
-      <LeftSidebar />
       
       {/* profile page styling */}
       <div className="w-[100%] justify-end flex">
@@ -49,7 +50,7 @@ const Profiepage = () => {
             <div className=" ml-[20px]">
               <div className="flex items-center">
                 <h1 className="text-2xl font-bold">John Doe</h1>
-                <NavLink to="/account-update">
+                <NavLink to="account-update">
                   <button className="w-[100px] h-[40px] bg-[#252525] text-white rounded ml-[40px] px-3  text-sm ">
                   Edit profile
                 </button>
@@ -90,13 +91,13 @@ const Profiepage = () => {
                 <h4 onClick={Toggle3} className="text-[14px] mr-[40px] cursor-pointer">TAGGED</h4>
               </div>
               {show ? (
-                <Profilepost />
+                <TabletProfilepost />
               ) : null}
               {showsaved ? (
-                <Profilesaved />
+                <TabletProfilesaved />
               ) : null}
               {showtagged ? (
-                <Profiletagged />
+                <TabletProfiletagged />
               ) : null}
             </div>
           </div>
@@ -107,4 +108,4 @@ const Profiepage = () => {
   )
 }
 
-export default Profiepage
+export default TableProfilePage

@@ -6,16 +6,13 @@ const UploadImage: FC<imgData> = ({ setImages, icon, css }) => {
 
   const handleImageChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = event.target.files;
-
     if (!selectedFiles) return;
-
     const imagePromises: Promise<string>[] = [];
 
     for (let i = 0; i < selectedFiles.length; i++) {
       const file = selectedFiles[i];
       const promise = new Promise<string>((resolve) => {
         const reader = new FileReader();
-
         reader.onloadend = () => {
           if (typeof reader.result === "string") {
             resolve(reader.result);
@@ -23,13 +20,11 @@ const UploadImage: FC<imgData> = ({ setImages, icon, css }) => {
             resolve("");
           }
         };
-
         reader.readAsDataURL(file);
       });
 
       imagePromises.push(promise);
     }
-
     try {
       const imageDataArray = await Promise.all(imagePromises);
       //   setImages(imageDataArray);

@@ -3,7 +3,6 @@ import LeftSidebar from '../../components/static/LeftSidebar'
 import {FiSettings} from "react-icons/fi"
 import RightSidebar from '../../components/static/RightSidebar'
 import { useState } from 'react'
-import All from './All'
 import Verified from '../Verified'
 import Mentions from './Mentions'
 
@@ -52,11 +51,6 @@ const NotificationPage = () => {
    </div>
    
    </div>
-   {
-      show ? (
-        <All/>
-      ) : null 
-    }
     {
       showVerified ? (
         <Verified/> 
