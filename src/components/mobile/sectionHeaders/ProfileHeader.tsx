@@ -6,7 +6,7 @@ const ProfileHeader = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full px-4 py-3 flex justify-between bg-transparent relative z-10">
+    <div className="w-full h-full text-orange-500 px-4 sticky top-0 py-3 flex justify-between bg-transparent z-10">
       <p
         className="text-lg cursor-pointer"
         onClick={() => {

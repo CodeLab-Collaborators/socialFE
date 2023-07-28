@@ -54,10 +54,7 @@ export const mobileRouter = createBrowserRouter([
         path: "user-settings",
         element: <UserSettingsPage />,
       },
-      {
-        path: "profile-page/account-update",
-        element: <UserUpdatePage />,
-      },
+
       {
         path: "home-page",
         element: <Test />,
@@ -91,6 +88,10 @@ export const mobileRouter = createBrowserRouter([
   {
     path: "/password-reset",
     element: <ForgetPassword />,
+  },
+  {
+    path: "profile-page/account-update",
+    element: <UserUpdatePage />,
   },
   // {
   //   path: "/verify",
