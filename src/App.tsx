@@ -20,7 +20,7 @@ const App = () => {
             <MainRouter />
             <ToastContainer />
           </RecoilRoot>
-          <MainRouter />
+          {/* <MainRouter /> */}
         </PersistGate>
       </Provider>
     </div>
