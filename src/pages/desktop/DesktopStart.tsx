@@ -1,4 +1,5 @@
 import Postfile from "./Postfile"
+import img from "../../assets/chelsea.jpg"
 
 const DesktopStart = () => {
     return (
@@ -14,8 +15,22 @@ const DesktopStart = () => {
 
                <Postfile />
 
-            <div className="w-[100%] h-[100vh] bg-[red]">
-                floran
+            <div className="w-[100%] h-[100%] pr-[20px] pl-[20px] pt-[15px] flex-col">
+                <div className="w-[100%] flex h-[40px] justify-between">
+                    <div className="w-[55px] h-[55px] rounded-full overflow-hidden">
+                        <img src={img} alt="" className="w-[100%] h-[100%] object-cover"/>
+                    </div>
+
+                    <div className="w-[90%] flex-col">
+                        <div className="w-[100%] flex">
+                            <div className="flex">
+                                <h3 className="text-[16px] font-medium">Transfer News Live</h3>
+                                <p className="text-[15px] text-[gray] ml-[7px]">@Deadlineday .</p>
+                                <p className="text-[15px] text-[gray] ml-[5px]">22h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
