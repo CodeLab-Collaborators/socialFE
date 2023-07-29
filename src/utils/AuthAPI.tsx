@@ -14,7 +14,7 @@ export const createAccount = async (data: iData) => {
       })
       .catch((err: Error) => {
         console.log(err);
-        return err
+        return err;
       });
   } catch (error) {
     console.log(error);

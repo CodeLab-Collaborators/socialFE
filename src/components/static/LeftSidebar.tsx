@@ -10,10 +10,12 @@ const LeftSidebar = () => {
       <div className="w-[18%] h-[100vh] bg-[#fff] border-r border-[#DBDBDB] column pt-[40px] pl-[20px] pr-[20px] fixed">
           <h2 className="text-[18px]">Ajegunle_Connect</h2>
 
-      <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[30px] hover:bg-[#F2F2F2] cursor-pointer">
+      <NavLink to="/">
+        <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[30px] hover:bg-[#F2F2F2] cursor-pointer">
         <div className="text-[25px]"><AiFillHome /></div>
         <h3 className="text-[#202020] ml-[15px]">Home</h3>
-          </div>
+      </div>
+      </NavLink>
           
            <div className="flex items-center w-[100%] p-[13px] rounded-md mt-[8px] hover:bg-[#F2F2F2] cursor-pointer">
         <div className="text-[25px]"><BiSearch /></div>
