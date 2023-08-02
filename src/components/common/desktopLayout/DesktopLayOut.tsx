@@ -9,13 +9,15 @@ const DesktopLayOut = () => {
         <div
             style={{
             display: "flex",
-                width: "100%",
-            flexDirection: "column"
+                width: "70%",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center"
         }}
         >
             <div style={{
                 display: "flex",
-                width: "100%"
+                width: "100%",
             }}>
                 <LeftSidebar />
                 <Outlet />
